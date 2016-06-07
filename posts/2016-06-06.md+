@@ -1,0 +1,15 @@
+title: Hello, World!
+
+![Beebe Lake]({{site.url}}/images/photos/beebe.jpg)
+
+Hi. I'm Andrew. I like to make things and have crazy ideas. I'm basically Carl Sagan's long-lost evil computer scientist cousin. We share a hungry curiosity, a philosophical slant and a splash of big universe dreams. This is good because the universe is awesome. This is bad because the awesome parts are really close to the sketchy parts that involve shooting a flaming arrow into a balloon of hydrogen gas just to see what happens, or downloading the full version of WinRAR, also just to see what happens. I go to Cornell in upstate New York, which is good because there is a lot of nature to sit in and the sky is big enough to contain big ideas.
+
+I'm starting this new blog format where I'll post my projects, past and present. Here's a preview:
+
+- Birds: simulation of flocking behavior.
+- The Land of Stuff: online fantasy adventure game.
+- Sound Transfer: transfer data between computers with microphone and speaker.
+
+This site is made using my own static site generator, [nanosite](https://github.com/qema/nanosite). It's a bare-bones boilerplate smasher and is customizable to the core.
+
+Expect more soon.
