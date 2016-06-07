@@ -53,9 +53,9 @@ input {
     vertical-align: middle;
 }
 a {
-    color: hsl(180,20%,50%);;
+    color: hsl(180,50%,50%);;
     text-decoration: none;
 }
 #about-link {
-    color: hsl(180,70%,50%);
+    color: hsl(180,50%,50%);
 }
