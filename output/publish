@@ -6,3 +6,5 @@ nanosite build
 git add .
 git commit -m "autopublish"
 git subtree push --prefix=output/ output master
+git push
+

@@ -2,5 +2,6 @@
   "site": {"title": "Paradoxical",
 	   "author": "Andrew Wang",
 	   "tagline": "A computer science blog.",
-	   "url": "http://wanganzhou.com"}
+	   "url": "",
+	   "url`": "http://wanganzhou.com"}
 }

@@ -3,30 +3,36 @@
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     margin: 0;
-    padding-bottom: 0.1em;
 }
 
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+
 @media only screen and (min-width: 768px){
-    .container {
-	width: 66.667%;
-	padding: 0;
+    body {
 	margin: 0 16.667%;
     }
 }
 
 body {
+    padding: 0;
     font-family: Merriweather, serif;
+    font-size: 14px;
 }
 
 h1 a, h2 a, h3 a {
     text-decoration: none;
 }
 h1 a:hover, h2 a:hover, h3 a:hover {
-    color: black;			    
+    color: black;
 }
 
 header {
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -72,7 +78,7 @@ nav ul li ul {
     border-radius: 8px;
 }
 
-anav ul li:hover > ul,
+nav ul li:hover > ul,
 nav ul li ul:hover {
     visibility: visible;
 }
@@ -90,7 +96,14 @@ nav ul li ul li a:hover {
 }
 
 p {
-    margin-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+pre, code {
+    display: block;
+    word-wrap: break-word;
 }
 
 img {
@@ -107,6 +120,7 @@ a {
     color: black;
 }
 a:hover {
+    text-decoration: underline;
     color: red;
 }
 
