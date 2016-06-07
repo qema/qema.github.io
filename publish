@@ -2,11 +2,7 @@
 
 nanosite clean
 nanosite build
-cd output
-git init
-git add . -f
+
+git add .
 git commit -m "autopublish"
-git remote add origin https://github.com/qema/qema.github.io.git
-git push -u origin master -f
-rm -rf .git/
-cd ..
+git subtree push --prefix=output/ output master
