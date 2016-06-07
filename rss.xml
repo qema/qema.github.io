@@ -3,13 +3,13 @@
 
 <channel>
   <title>Paradoxical</title>
-  <link>http://wanganzhou.com</link>
+  <link></link>
   <description>A computer science blog.</description>
 
   
     <item>
       <title>Hello, World!</title>
-      <link>http://wanganzhou.com/posts/2016-06-06.html</link>
+      <link>/posts/2016-06-06.html</link>
     </item>
   
 </channel>
