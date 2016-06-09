@@ -20,7 +20,7 @@ function angle(l, r) {
   if (d > Math.PI) d -= 2*Math.PI;
   //d = d.mod(2*Math.PI);
   //d *= orientation;
-  return d;
+  return Math.abs(d);
   //return d;
 }
 
@@ -30,7 +30,7 @@ function orientedAngle(l, r) {
 
   var orientation = Math.sign(x1*y2 - x2*y1);
   if (orientation == 0) orientation = -1;
-  var a = Math.acos(x1*x2 + y1*y2);
+  var a = angle(l, r);//(x1*x2 + y1*y2);
   return a * orientation;
   //return a;
 }
@@ -310,7 +310,7 @@ function init() {
   entities[0].maxVel = 8 * scale;
   entities[0].accel = function() {
     this.ar = 0.1;
-    this.at = angle(this.t, Math.atan2(mouseY - this.y, mouseX - this.x));
+    this.at = orientedAngle(this.t, Math.atan2(mouseY - this.y, mouseX - this.x));
   }
 
   canvas.addEventListener("mousemove", mouseMove);
