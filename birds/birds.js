@@ -35,29 +35,31 @@ function orientedAngle(l, r) {
   //return a;
 }
 
+/*
 function delta(a, b, bound) {
   return Math.min(Math.abs(b - a), Math.abs(b + bound - a));
-}
+}*/
 
-function dist(x1, y1, x2, y2) {
+function distSq(x1, y1, x2, y2) {
   //var a = delta(x1, x2, scrWidth);
   //var b = delta(y1, y2, scrHeight);
   //return a*a + b*b;
-  return Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+  return (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
 }
 
+/*
 function loopoverInfo(x1, y1, x2, y2) {
   var d = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
-  var ld = dist(x1, y1, x2, y2);
+  var ld = distSq(x1, y1, x2, y2);
   if (d <= ld)
-    return {"dist": d, "loopover": false}
+    return {"distSq": d, "loopover": false}
   else
-    return {"dist": ld, "loopover": true}
-}
+    return {"distSq": ld, "loopover": true}
+}*/
 
 function closestEntities(x, y) {
   var e = entities.slice(1);  // copy array (don't include white bird)
-  e.sort(function(b, a) {return dist(x, y, b.x, b.y) - dist(x, y, a.x, a.y)});
+  e.sort(function(b, a) {return distSq(x, y, b.x, b.y) - distSq(x, y, a.x, a.y)});
   e = e.slice(1);  // don't include self
   return e;
 }
@@ -108,21 +110,23 @@ function Entity(x, y) {
     cy /= closest.length;
 
     //var li = loopoverInfo(this.x, this.y, cx, cy);
-    var cohesionDR = Math.sqrt(dist(this.x, this.y, cx, cy));
+    var cohesionDR = Math.pow(distSq(this.x, this.y, cx, cy), 0.25);
     desiredVT = orientedAngle(this.t, Math.atan2(cy - this.y, cx - this.x));
     var cohesionDT = (desiredVT - this.vt) * 0.1;
     //if (li.loopover) cohesionDT -= Math.PI * Math.sign(cohesionDT);
 
     // repulsion
-    var repulsionDR = dist(this.x, this.y, closest[0].x, closest[0].y) < (40 * scale * RF) ? 10 : 0;
+    var r = 40 * scale * RF;
+    var repulsionDR = distSq(this.x, this.y, closest[0].x, closest[0].y) < r*r ? 10 : 0;
     desiredVT = orientedAngle(this.t, Math.atan2(closest[0].y - this.y, closest[0].x - this.x) + this.avoidDir);
     var repulsionDT = (desiredVT - this.vt) * 0.1;
     //var repulsionDT = (repulsionDR == 0 && Math.abs(a) < this.avoidDir) ? 0 : Math.abs(Math.abs(a) - this.avoidDir) * (a > 0 ? -0.1 : 0.1);
-    //this.ar = Math.log(closestDist / 10 + 0.000001) * 1;
-    //console.log(closestDist / 100 + 0.000001);
+    //this.ar = Math.log(closestDistSq / 10 + 0.000001) * 1;
+    //console.log(closestDistSq / 100 + 0.000001);
 
     // fear (repulsion of mouse-controlled bird)
-    var fearDR = dist(this.x, this.y, entities[0].x, entities[0].y) < 270 * scale ? 40 : 0;
+    r = 270 * scale;
+    var fearDR = distSq(this.x, this.y, entities[0].x, entities[0].y) < r*r ? 40 : 0;
     var posa = Math.atan2(entities[0].y - this.y, entities[0].x - this.x);
     desiredVT = orientedAngle(this.t, posa);
     var fearDT = -(desiredVT - this.vt) * 0.5;
@@ -172,11 +176,10 @@ function Entity(x, y) {
     this.x += this.vr * Math.cos(this.t);
     this.y += this.vr * Math.sin(this.t);
 
-    var canvas = document.getElementById("swarm-canvas");
-    if (this.x >= canvas.width) this.x = 0;
-    if (this.y >= canvas.height) this.y = 0;
-    if (this.x < 0) this.x = canvas.width;
-    if (this.y < 0) this.y = canvas.height;
+    if (this.x >= scrWidth) this.x = 0;
+    if (this.y >= scrHeight) this.y = 0;
+    if (this.x < 0) this.x = scrWidth;
+    if (this.y < 0) this.y = scrHeight;
   }
 }
 
@@ -246,6 +249,7 @@ function update() {
   }
 
   redraw();
+  //requestAnimationFrame(update);
 }
 
 function keyPress(e) {
@@ -297,7 +301,7 @@ function init() {
   canvas.style.height = window.innerHeight;
   scrWidth = canvas.width;
   scrHeight = canvas.height;
-
+  
   var numBirds = Math.round(225 / (1440 * 812) * window.innerWidth * window.innerHeight);
   //console.log(numBirds,window.innerWidth,window.innerHeight);
   for (var i = 0; i < numBirds; i++)
@@ -312,8 +316,9 @@ function init() {
   canvas.addEventListener("mousemove", mouseMove);
   addEventListener("mouseup", mouseUp);
   addEventListener("keypress", keyPress);
-  
+
+  //update();
   setInterval(update, 1000 / 60.0);
   //setInterval(fpsCount, 1000);
-  redraw();
+  //redraw();
 }
