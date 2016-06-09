@@ -224,25 +224,8 @@ function redraw() {
   //requestAnimationFrame(redraw);
 }
 
-function updateUI() {
-  // sliders
-  var c = Number(document.getElementById("cohesion").value);
-  var a = Number(document.getElementById("adhesion").value);
-  var r = Number(document.getElementById("repulsion").value);
-  CF = c / 100.0;
-  AF = a / 100.0;
-  RF = r / 100.0;
-
-  turnSpeed = Number(document.getElementById("turn-speed").value) / 1000;
-  flockSize = Math.max(3, Math.floor(Number(document.getElementById("flock-size").value) / 100.0 * entities.length))
-
-  // checkboxes
-  followWhite = document.getElementById("follow-white").checked;
-  fearWhite = document.getElementById("fear-white").checked;
-}
-
 function update() {
-  updateUI();
+  //updateUI();
   
   for (var i = 0; i < entities.length; i++) {
     entities[i].update();
@@ -292,17 +275,60 @@ function isHighRes() {
   return window.devicePixelRatio > 1;
 }
 
-function init() {
+function setupUIHooks(canvas) {
+  // global events
+  canvas.addEventListener("mousemove", mouseMove);
+  addEventListener("mouseup", mouseUp);
+  addEventListener("keypress", keyPress);
+
+  // hud sliders
+  if (document.getElementById("hud")) {
+    var cohesionSlider = document.getElementById("cohesion");
+    cohesionSlider.oninput = function() {
+      CF = Number(cohesionSlider.value) / 100.0;
+    }
+    var adhesionSlider = document.getElementById("adhesion");
+    adhesionSlider.oninput = function() {
+      AF = Number(adhesionSlider.value) / 100.0;
+    }
+    var repulsionSlider = document.getElementById("repulsion");
+    repulsionSlider.oninput = function() {
+      RF = Number(repulsionSlider.value) / 100.0;
+    }
+    var turnSpeedSlider = document.getElementById("turn-speed");
+    turnSpeedSlider.oninput = function() {
+      turnSpeed = Number(turnSpeedSlider.value) / 1000;
+    }
+    var flockSizeSlider = document.getElementById("flock-size");
+    flockSizeSlider.oninput = function() {
+      flockSize = Math.max(3, Math.floor(Number(flockSizeSlider.value) /
+					 100.0 * entities.length));
+    }
+    var followWhiteCheckbox = document.getElementById("follow-white");
+    followWhiteCheckbox.onchange = function() {
+      followWhite = followWhiteCheckbox.checked;
+    }
+    var fearWhiteCheckbox = document.getElementById("fear-white");
+    fearWhiteCheckbox.onchange = function() {
+      fearWhite = fearWhiteCheckbox.checked;
+    }
+  }
+}
+
+function init(wid, hei, numBirds) {
+  if (!wid) wid = window.innerWidth;
+  if (!hei) hei = window.innerHeight;
+  if (!numBirds) numBirds = Math.round(225 / (1440 * 812) * wid * hei);
+  
   var canvas = document.getElementById("swarm-canvas");
   scale = isHighRes() ? 1 : 0.5;
-  canvas.width = window.innerWidth * scale * 2;
-  canvas.height = window.innerHeight * scale * 2;
-  canvas.style.width = window.innerWidth;
-  canvas.style.height = window.innerHeight;
+  canvas.width = wid * scale * 2;
+  canvas.height = hei * scale * 2;
+  canvas.style.width = wid;
+  canvas.style.height = hei;
   scrWidth = canvas.width;
   scrHeight = canvas.height;
   
-  var numBirds = Math.round(225 / (1440 * 812) * window.innerWidth * window.innerHeight);
   //console.log(numBirds,window.innerWidth,window.innerHeight);
   for (var i = 0; i < numBirds; i++)
     addNewEntity();
@@ -313,10 +339,8 @@ function init() {
     this.at = orientedAngle(this.t, Math.atan2(mouseY - this.y, mouseX - this.x));
   }
 
-  canvas.addEventListener("mousemove", mouseMove);
-  addEventListener("mouseup", mouseUp);
-  addEventListener("keypress", keyPress);
-
+  setupUIHooks(canvas);
+  
   //update();
   setInterval(update, 1000 / 60.0);
   //setInterval(fpsCount, 1000);

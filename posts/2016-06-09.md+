@@ -1,0 +1,30 @@
+title: Neon Birds
+
+Full-page version with controls: [Neon Birds]({{site.url}}/birds/)
+
+The white bird follows your mouse. Lead the flock and create new patterns!
+
+<p>
+  <script src="{{site.url}}/birds/birds.js"></script>
+  <canvas id="swarm-canvas" style="margin: auto"></canvas>
+  <script>init(800, 600, 180); turnSpeed = 0.04;</script>
+</p>
+
+# About
+Neon Birds is a flocking simulation. Birds follow three simple rules when flocking:
+
+1. Adhesion: Match velocity (speed and direction) with other birds
+2. Cohesion: Stay close to other birds
+3. Repulsion: Don't bump into other birds
+
+The birds are colored by the direction they face. The angular nature of colors (think color wheel) suits this well. Plus, it helps you identify flocks easily, since birds in a flock tend to face the same direction according to rule 1.
+
+The [full-page version]({{site.url}}/birds/) has sliders that let you control the strength of the three rules. One thing to try:
+
+- Turn cohesion, turn speed and flock size all the way up to create a giant bird blob.
+- Click "fear white bird" and tunnel through the blob - the blob will split and rejoin around you, which is an emegent behavior of the three rules.
+- If you have "follow white bird" checked along with "fear", then you can even get the birds to create a circle of fear around you!
+
+Try other combinations for tons of other interesting emergent patterns.
+
+Based on this paper: [Flocks, Herds, and Schools: A Distributed Behavioral Model](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/)

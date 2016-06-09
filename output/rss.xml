@@ -3,13 +3,18 @@
 
 <channel>
   <title>Paradoxical</title>
-  <link></link>
+  <link>http://wanganzhou.com</link>
   <description>A computer science blog.</description>
 
   
     <item>
+      <title>Neon Birds</title>
+      <link>http://wanganzhou.com/posts/2016-06-09.html</link>
+    </item>
+  
+    <item>
       <title>Hello, World!</title>
-      <link>/posts/2016-06-06.html</link>
+      <link>http://wanganzhou.com/posts/2016-06-06.html</link>
     </item>
   
 </channel>
