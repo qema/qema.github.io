@@ -199,7 +199,7 @@ function redraw() {
   for (var i = 0; i < entities.length; i++) {
     var entity = entities[i];
     ctx.beginPath();
-    ctx.arc(entity.x, entity.y, 4 * scale, 0, 2 * Math.PI, false);
+    ctx.arc(entity.x, entity.y, 5 * scale, 0, 2 * Math.PI, false);
     var color = "hsl(" + (Math.floor(entity.t.mod(Math.PI*2)*180/Math.PI)) + ",70%,50%)";
     ctx.fillStyle = (i === 0) ? "#fff" : color;
     //ctx.lineWidth = 0;
@@ -298,7 +298,7 @@ function init() {
   scrWidth = canvas.width;
   scrHeight = canvas.height;
 
-  var numBirds = Math.round(200 / (1440 * 812) * window.innerWidth * window.innerHeight);
+  var numBirds = Math.round(225 / (1440 * 812) * window.innerWidth * window.innerHeight);
   //console.log(numBirds,window.innerWidth,window.innerHeight);
   for (var i = 0; i < numBirds; i++)
     addNewEntity();
