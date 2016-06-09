@@ -37,10 +37,10 @@ function delta(a, b, bound) {
 }
 
 function dist(x1, y1, x2, y2) {
-  var a = delta(x1, x2, scrWidth);
-  var b = delta(y1, y2, scrHeight);
-  return a*a + b*b;
-  //return Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+  //var a = delta(x1, x2, scrWidth);
+  //var b = delta(y1, y2, scrHeight);
+  //return a*a + b*b;
+  return Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
 }
 
 function loopoverInfo(x1, y1, x2, y2) {
@@ -98,13 +98,14 @@ function Entity(x, y) {
     }
     cx /= closest.length;
     cy /= closest.length;
-    if (delta(this.x, cx + scrWidth / 2, scrWidth) <
-	delta(this.x, cx, scrWidth)) cx -= scrWidth / 2;
-    if (delta(this.y, cy + scrHeight / 2, scrHeight) <
-	delta(this.y, cy, scrHeight)) cy -= scrHeight / 2;
-    var li = loopoverInfo(this.x, this.y, cx, cy);
-    var cohesionDR = Math.sqrt(li.dist);
-    var cohesionDT = orientedAngle(Math.atan2(cy - this.y, cx - this.x), this.t) + (li.loopover ? Math.PI : 0);
+    //if (delta(this.x, cx + scrWidth / 2, scrWidth) <
+//	delta(this.x, cx, scrWidth)) cx -= scrWidth / 2;
+    //if (delta(this.y, cy + scrHeight / 2, scrHeight) <
+//	delta(this.y, cy, scrHeight)) cy -= scrHeight / 2;
+//    var li = loopoverInfo(this.x, this.y, cx, cy);
+    var cohesionDR = Math.sqrt(dist(this.x, this.y, cx, cy));
+    var cohesionDT = orientedAngle(Math.atan2(cy - this.y, cx - this.x), this.t);
+//    if (li.loopover) cohesionDT -= Math.PI * Math.sign(cohesionDT);
 
     // repulsion
     var repulsionDR = dist(this.x, this.y, closest[0].x, closest[0].y) < (40 * scale * RF) ? 10 : 0;
