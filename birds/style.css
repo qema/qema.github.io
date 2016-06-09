@@ -59,7 +59,3 @@ a {
 a:hover {
     color: hsl(180, 75%, 75%);
 }
-
-#disqus_thread {
-    margin-top: 1em;
-}
