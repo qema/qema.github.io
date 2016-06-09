@@ -114,7 +114,7 @@ function Entity(x, y) {
     //if (li.loopover) cohesionDT -= Math.PI * Math.sign(cohesionDT);
 
     // repulsion
-    var repulsionDR = dist(this.x, this.y, closest[0].x, closest[0].y) < (80 * scale * RF * RF) ? 10 : 0;
+    var repulsionDR = dist(this.x, this.y, closest[0].x, closest[0].y) < (40 * scale * RF) ? 10 : 0;
     desiredVT = orientedAngle(this.t, Math.atan2(closest[0].y - this.y, closest[0].x - this.x) + this.avoidDir);
     var repulsionDT = (desiredVT - this.vt) * 0.1;
     //var repulsionDT = (repulsionDR == 0 && Math.abs(a) < this.avoidDir) ? 0 : Math.abs(Math.abs(a) - this.avoidDir) * (a > 0 ? -0.1 : 0.1);
