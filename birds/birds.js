@@ -122,11 +122,11 @@ function Entity(x, y) {
     //console.log(closestDist / 100 + 0.000001);
 
     // fear (repulsion of mouse-controlled bird)
-    var fearDR = dist(this.x, this.y, entities[0].x, entities[0].y) < 300 * scale ? 40 : 0;
+    var fearDR = dist(this.x, this.y, entities[0].x, entities[0].y) < 270 * scale ? 40 : 0;
     var posa = Math.atan2(entities[0].y - this.y, entities[0].x - this.x);
     desiredVT = orientedAngle(this.t, posa);
-    var fearDT = -(desiredVT - this.vt) * 0.3;
-    if (Math.abs(desiredVT) > Math.PI / 2) fearDT *= -1;
+    var fearDT = -(desiredVT - this.vt) * 0.5;
+    //if (Math.abs(desiredVT) > Math.PI / 2) fearDT *= -1;
     if (this.vr < 0) fearDT *= -1;
     //var fearDT = da > 0 ? -0.3 : 0.3;
     //if (Math.abs(da) > Math.PI / 2) fearDT *= -1;
