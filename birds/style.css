@@ -60,6 +60,6 @@ a:hover {
     color: hsl(180, 75%, 75%);
 }
 
-section {
-    margin-bottom: 1em;
+#disqus_thread {
+    margin-top: 1em;
 }
