@@ -6,10 +6,11 @@ def format_date(ctx, d):
 macro("format_date", format_date)
 
 def newest(ctx, count, folder):
+    unlimited = type(count) == str and count.lower() == "unlimited"
     s = sorted([x for x in ctx_fetch(ctx, folder).values() if "is_file" in x],
                key=lambda x: x["date"],
                reverse=True)
-    return s[:count]
+    return s if unlimited else s[:count]
 macro("newest", newest)
 
 def make_menu(ctx, start=True, site_url=None):
