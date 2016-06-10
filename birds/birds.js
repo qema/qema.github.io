@@ -99,7 +99,6 @@ function Entity(x, y) {
     var alignmentDR = (avgVelR - this.vr) + Math.random() * 0.1;
     var desiredVT = orientedAngle(this.t, avgHeading);
     var alignmentDT = (desiredVT - this.vt) * 0.15;
-    if (this.vr < 0) alignmentDT *= -1;
 
     // cohesion
     var cx = 0, cy = 0;
@@ -114,16 +113,13 @@ function Entity(x, y) {
     var cohesionDR = Math.pow(distSq(this.x, this.y, cx, cy), 0.25);
     desiredVT = orientedAngle(this.t, Math.atan2(cy - this.y, cx - this.x));
     var cohesionDT = (desiredVT - this.vt) * 0.1;
-    if (this.vr < 0) cohesionDT *= -1;
     //if (li.loopover) cohesionDT -= Math.PI * Math.sign(cohesionDT);
 
     // repulsion
     var r = 40 * scale * RF;
     var repulsionDR = distSq(this.x, this.y, closest[0].x, closest[0].y) < r*r ? 10 : 0;
-    //desiredVT = orientedAngle(this.t, Math.atan2(closest[0].y - this.y, closest[0].x - this.x) + this.avoidDir);
-    desiredVT = orientedAngle(this.t, Math.atan2(entities[0].y - this.y, entities[0].x - this.x));
-    var repulsionDT = -(desiredVT - this.vt) * 0.1;
-    if (this.vr < 0) repulsionDT *= -1;
+    desiredVT = orientedAngle(this.t, Math.atan2(closest[0].y - this.y, closest[0].x - this.x) + this.avoidDir);
+    var repulsionDT = (desiredVT - this.vt) * 0.1;
     //var repulsionDT = (repulsionDR == 0 && Math.abs(a) < this.avoidDir) ? 0 : Math.abs(Math.abs(a) - this.avoidDir) * (a > 0 ? -0.1 : 0.1);
     //this.ar = Math.log(closestDistSq / 10 + 0.000001) * 1;
     //console.log(closestDistSq / 100 + 0.000001);
