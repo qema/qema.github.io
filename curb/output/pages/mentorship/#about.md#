@@ -1,0 +1,74 @@
+title: About Peer Mentorship
+
+{{{banner_top_start}}}
+<img src="{{site.url}}/images/pmp/pmp.jpg">
+{{{banner_end}}}
+
+{{{section_white_start}}}
+
+# About Peer Mentorship
+
+* Want to get involved in research?
+* Interested in developing leadership experience by helping students learn about research?
+
+<script>function choreo(s, state) {
+  var elt = document.getElementById(s);
+  var button = document.getElementById(s + "-button");
+  button.style.color = state == "visible" ? "black" : "";
+  button.style.borderColor = button.style.color;
+  elt.style.visibility=state;
+  elt.style.position=(state=="visible")?"static":"absolute";
+}</script>
+<div class="row" style="width: 30%; margin: auto">
+  <div class="btn-group btn-group-lg" role="group">
+    <button type="button" id="mentor-button" class="btn btn-secondary" onmousedown="choreo('mentor', 'visible');choreo('mentee', 'hidden')">Mentor</button>
+    <button type="button" id="mentee-button" class="btn btn-secondary" onmousedown="choreo('mentor', 'hidden');choreo('mentee', 'visible')">Mentee</button>
+  </div>
+</div>
+
+{{{section_end}}}
+
+{{{section_gray_start}}}
+<div id="mentor">
+## Mentor
+
+CURB is looking for students who would like to serve as research peer advisors.
+#  
+Mentor Responsibilities:
+
+* Guide a small group of mentees interested in your field
+* Host lab tours
+* Participate in the CURB Peer Mentorship online forum discussion board
+* Attend a monthly meeting
+* Provide advice to mentees on a need basis
+
+By dedicating a few hours a month, you could make a huge difference for your mentees.
+
+<div style="width: 12%; display: block; text-align: center; margin-top: 1em" class="btn"><a href="{{site.url}}/pages/mentorship/apply.html">Apply</a></div>
+</div>
+
+<div id="mentee">
+<h2>Mentee</h2>
+
+<p>Want to do undergraduate research, but unsure about where to start? Students from all colleges at Cornell may apply to be mentored by a research peer advisor.</p>
+<br>
+<p>You will be matched with a research peer advisor with similar research and academic interests. Peer advisors are an important resource for advice on finding research positions or careers in research. As advisee, you will hear first-hand experiences from those who have already been in your position.</p>
+<br>
+<p>In addition to personal meetings, CURB presents social activities throughout the semester, including luncheons with peer advisors and bowling and skating nights that everyone can enjoy.</p>
+
+In addition to a one on one mentor to help guide mentees to getting involved with research, mentees will have access to events and opportunities to meet faculty and other student researchers:  
+- Presentations and seminars on summer internships 
+- Panels from professors to hear from a faculty's perspectives
+- Meet and Greet socials with student researchers 
+- Personalized workshops for email drafting, resume critiques, and reading research papers. 
+- Lab tours
+
+Many of our mentees had success in getting exposure to the research work done on campus and getting research positions themselves. If you wish to be a mentee, please complete the application below so we can match you to an appropriate mentor! 
+</div>
+
+{{{section_end}}}
+
+<script>
+choreo('mentor', 'visible');
+choreo('mentee', 'hidden');
+</script>

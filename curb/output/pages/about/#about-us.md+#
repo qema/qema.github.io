@@ -1,0 +1,82 @@
+title: About Us
+
+{{{banner_top_start}}}
+<img src="{{site.url}}/images/team.jpg">
+{{{banner_end}}}
+
+{{{section_white_start}}}
+
+# About Us
+
+We are the <span class="h3">Cornell Undergraduate Research Board</span>, and our mission is to connect you with exciting research opportunities and people.
+
+<div class="row post text-center" style="text-align: justify">
+<div class="col-md-4">
+<img src="{{site.url}}/images/diagrams/billboard.png" class="icon">
+<p>Forums, from the <a href="{{site.url}}/pages/events/forums.html">Fall and Spring research forums</a> to the <a href="{{site.url}}/pages/events/humanities.html">Humanities Showcase</a>, combine campus-wide poster sessions and research keynotes.</p>
+</div>
+
+<div class="col-md-4">
+<img src="{{site.url}}/images/diagrams/pmp.png">
+<p>Our <a href="pmp-about.html"><span class="bigger">Peer Mentorship Program</span></a> helps you map out your research path with a mentor.</p>
+</div>
+
+<div class="col-md-4">
+<img src="{{site.url}}/images/diagrams/dinners.png">
+<p>Our <a href="dinner-series.html"><span class="bigger">Dinner Series</span></a> bring together students and faculty to share a meal and talk science.</p>
+</div>
+</div>
+
+{{{section_end}}}
+
+<a name="leadership"></a>
+
+{{{section_gray_start}}}
+# Leadership
+{{{section_end}}}
+
+{{{banner_start}}}
+
+<div id="grid" style="background: #f4f4f4; padding-bottom: 2em">
+<div class="grid-item"><img src="{{site.url}}/images/execs/alisha.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/amanda.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/andrea.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/harry.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/isabella.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/jake.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/james.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/maria.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/myra.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/natasha.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/patrick.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/rachel.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/riya.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/stephanie.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/taylor.png"></div>
+<div class="grid-item"><img src="{{site.url}}/images/execs/victoria.png"></div>
+</div>
+ 
+{{{banner_end}}}
+
+<script>
+$("#grid").imagesLoaded(function() {
+  $("#grid").masonry({itemSelector: ".grid-item"});
+});
+</script>
+
+
+{{{section_white_start}}}
+
+# Sponsors
+
+<div class="col-md-4">
+<img src="{{site.url}}/images/sponsors/sponsor-pr-s.jpg">
+</div>
+<div class="col-md-4">
+<img src="{{site.url}}/images/sponsors/sponsor-glc-s.png">
+</div>
+<div class="col-md-4">
+<img src="{{site.url}}/images/sponsors/sponsor-neb-s.jpg">
+</div>
+
+{{{section_end}}}
