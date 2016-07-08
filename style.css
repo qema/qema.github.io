@@ -130,6 +130,18 @@ footer {
     margin-bottom: 2em;
 }
 
+/* masonry */
+.grid-item {
+    display: inline-block;
+}
+.grid-item 1x1 {
+    width: 25%;
+}
+.grid-item 2x1 {
+    width: 50%;
+}
+
+/* disqus */
 #disqus_thread {
     margin-top: 1em;
 }
