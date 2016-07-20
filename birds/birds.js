@@ -1,3 +1,5 @@
+var paused = false;
+
 var entities = [];
 var mouseX = 0, mouseY = 0;
 var numFrames = 0;
@@ -225,14 +227,16 @@ function redraw() {
 }
 
 function update() {
-  //updateUI();
-  
-  for (var i = 0; i < entities.length; i++) {
-    entities[i].update();
-  }
+  if (!paused) {
+    //updateUI();
 
-  redraw();
-  //requestAnimationFrame(update);
+    for (var i = 0; i < entities.length; i++) {
+      entities[i].update();
+    }
+
+    redraw();
+    //requestAnimationFrame(update);
+  }
 }
 
 function keyPress(e) {
