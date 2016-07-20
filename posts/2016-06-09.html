@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/scripts/highlight/highlight-tomorrow.css">
     <script src="/scripts/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    
-<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
 
-    
+    <!--
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -22,15 +22,36 @@
     </header>
     <section>
       <article>
-  <small>9 Jun 2016</small>
+  <small>19 Jul 2016</small>
   <h2>Neon Birds</h2>
   <div class="markdown">
     <p>Full-page version with controls: <a href="/birds/">Neon Birds</a></p>
 <p>The white bird follows your mouse. Lead the flock and create new patterns!</p>
 <p>
   <script src="/birds/birds.js"></script>
-  <canvas id="swarm-canvas" style="margin: auto"></canvas>
-  <script>init(800, 600, 180); turnSpeed = 0.04;</script>
+  <div id="swarm-container" style="position: relative; width: 800px; height: 600px; background: black; max-width: 100%">
+    <canvas id="swarm-canvas" style="margin: auto; max-width: 100%"></canvas>
+    <div id="pause-msg" style="position: absolute; background: black; padding: 1em; left: 0; right: 0; top: 300px; text-align: center; color: white; cursor: default">Click to start</div>
+  </div>
+  <script>
+  init(800, 600, 180);
+  update();
+  turnSpeed = 0.04;
+  paused = true;
+
+  var pauseMsg = document.getElementById("pause-msg");
+  document.getElementById("swarm-container").addEventListener(
+    "mousedown",
+    function() {
+      if (paused) {
+        pauseMsg.style.visibility = "hidden";
+      } else {
+        pauseMsg.style.visibility = "visible";
+      }
+      paused = !paused;
+    }
+  );
+  </script>
 </p>
 
 <h1>About</h1>
