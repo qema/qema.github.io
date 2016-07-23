@@ -6,7 +6,6 @@ body {
 
 .content-track {
     width: 100%;
-    padding: 0.5em;
     margin: auto;
 }
 @media (min-width: 768px) {
@@ -155,6 +154,13 @@ body {
     font-size: 1.15em;
 }
 
+@media (max-width: 768px) {
+    .post p, .page p {
+	padding-left: 1em;
+	padding-right: 1em;
+    }
+}
+
 .page-title, .post-title {
     margin-top: 0;
     margin-bottom: 0;
@@ -271,8 +277,8 @@ form {
     margin: auto;
 }
 
-.button-group-row {
-    width: 100%;
+.input-group-row {
+    width: 90%;
     margin: auto;
 }
 @media (min-width: 768px) {
