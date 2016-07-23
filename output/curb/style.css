@@ -72,7 +72,7 @@ body {
 
 .navbar-header .header-title {
     letter-spacing: 0.5pt;
-    font-size: 2.4em;
+    font-size: 1.25em;
     font-weight: 100;
     color: #05054a;
     text-decoration: none;
@@ -264,10 +264,33 @@ form {
     margin: auto;
 }
 
+.button-group-row {
+    width: 100%;
+    margin: auto;
+}
+@media (min-width: 768px) {
+    .button-group-row {
+	width: 30%;
+    }
+}
+
 /* Masonry */
 .grid-item {
-    padding: 0.5%;
-    width: 25%;
+    width: 24%;
+}
+
+.exec-profile {
+    background: #ddd;
+    padding: 1em;
+    margin: 0.5%;
+    border-radius: 1em;
+    text-align: center;
+}
+.exec-profile img {
+    border-radius: 4px;
+}
+.exec-name {
+    font-size: 1.25em;
 }
 
 /* Carousel */
