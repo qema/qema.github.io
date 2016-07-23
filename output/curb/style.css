@@ -282,7 +282,7 @@ form {
     margin: auto;
 }
 @media (min-width: 768px) {
-    .button-group-row {
+    .input-group-row {
 	width: 30%;
     }
 }
