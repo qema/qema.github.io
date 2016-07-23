@@ -72,7 +72,7 @@ body {
 
 .navbar-header .header-title {
     letter-spacing: 0.5pt;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 100;
     color: #05054a;
     text-decoration: none;
@@ -313,11 +313,13 @@ form {
     bottom: 2em;
     color: white;
     padding: 1em;
+    visibility: hidden;
 }
 @media (min-width: 768px) {
     .carousel-text {
 	font-size: 1.5em;
 	max-width: 50%;
+	visibility: visible;
     }
 }
 .slick-dots {
