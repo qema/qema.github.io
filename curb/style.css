@@ -5,8 +5,13 @@ body {
 }
 
 .content-track {
-    width: 66.6667%;
+    width: 100%;
     margin: auto;
+}
+@media (min-width: 768px) {
+    .content-track {
+	width: 66.6667%;
+    }
 }
 
 .row {
