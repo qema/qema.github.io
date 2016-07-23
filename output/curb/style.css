@@ -276,7 +276,12 @@ form {
 
 /* Masonry */
 .grid-item {
-    width: 24%;
+    width: 49%;
+}
+@media (min-width: 768px) {
+    .grid-item {
+	width: 24%;
+    }
 }
 
 .exec-profile {
