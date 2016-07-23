@@ -278,7 +278,8 @@ form {
 }
 
 .input-group-row {
-    width: 80%;
+    width: 90%;
+    padding: 1em;
     margin: auto;
 }
 @media (min-width: 768px) {
