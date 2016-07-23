@@ -84,7 +84,7 @@ body {
     text-decoration: none;
 }
 @media (min-width: 1280px) {
-    .header-title {
+    .navbar-header .header-title {
 	font-size: 2.3em;
     }
 }
