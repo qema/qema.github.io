@@ -257,6 +257,8 @@ h1, h2, h3, h4, h5, h6 {
 
 form {
     margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .icon {
@@ -279,7 +281,6 @@ form {
 
 .input-group-row {
     width: 90%;
-    padding: 1em;
     margin: auto;
 }
 @media (min-width: 768px) {
