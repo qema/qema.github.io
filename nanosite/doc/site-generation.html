@@ -30,8 +30,8 @@
   <p>
 
 <ul>
-  <li><a href="http://wanganzhou.com/nanosite/doc/templates.html">template language</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/site-generation.html">site generation</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/templates.html">template language</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a></li>
 </ul>
 
@@ -93,13 +93,11 @@ site/                             site/
 <ul>
 <li>A full directory tree of the site<ul>
 <li>Each top-level directory (besides <code>meta/</code> and <code>output/</code>) becomes a variable in the context (the name also gets lowercased.) Its value is a dictionary containing its subdirectories and files.</li>
-<li>Each file becomes a variable (the name is lowercased and all periods are replaced with underscores, so <code>hello.world.txt</code> &rarr; <code>hello_world_txt</code>.) Its value is a dictionary with the following items:<blockquote>
-<ul>
+<li>Each file becomes a variable (the name is lowercased and all periods are replaced with underscores, so <code>hello.world.txt</code> &rarr; <code>hello_world_txt</code>.) Its value is a dictionary with the following items:<ul>
 <li><code>is_file</code>: equals <code>True</code></li>
 <li><code>path</code>: full path of the file relative to site top. The extension of the output file is used here, so <code>hello.md</code> has path <code>hello.html</code>.</li>
 <li><code>date</code>: a <a href="https://docs.python.org/2/library/time.html#time.struct_time">Python time struct</a> containing the last date modified.</li>
 </ul>
-</blockquote>
 </li>
 </ul>
 </li>
@@ -124,9 +122,9 @@ site/                             site/
 <p>(This requires the <code>date</code> package: use <code>nanosite import date</code>)</p>
 <h1><a name="key-files"></a> key files</h1>
 <h2><a name="macros-py"></a> macros.py</h2>
-<p><code>meta/macros.py</code> is used to define macros which link to Python functions. Particularly, two methods are available in this file:</p>
+<p><code>meta/macros.py</code> is used to define macros which call Python functions. Particularly, two methods are available in this file:</p>
 <ul>
-<li><code>macro(name, function)</code>: Function should take a <code>context</code> and any macro parameters (in that order). <code>name</code> is the name of the macro. This creates a globally accessible macro which calls the Python function when the macro is invoked.</li>
+<li><code>macro(name, function)</code>: <code>function</code> is a Python function that takes in a <code>context</code> and any macro parameters (in that order), and returns some value. <code>name</code> is the name of the macro. This creates a globally accessible macro which calls the Python function when the macro is invoked.</li>
 <li><code>fetch(context, key)</code>: returns the value of variable <code>key</code> in <code>context</code>. <code>key</code> can contain dots for nested access, e.g. <code>site.url</code>; or spaces for macro calls, e.g. <code>formatDate date</code>.</li>
 </ul>
 <h3>examples</h3>
