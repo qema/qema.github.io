@@ -37,23 +37,23 @@
 
 </p>
 <h1>packages</h1>
-<p>Calling "nanosite import [name]" will import a package.
-If [name] isn't already in the ".nanosite" file's "installed-packages" array:</p>
+<p>Calling <code>nanosite import [name]</code> will import a package.
+If <code>[name]</code> isn't already in the <code>.nanosite</code> file's <code>installed-packages</code> array:</p>
 <ol>
 <li>Search for package file<ol>
-<li>Check [name].zip in top-level of site directory</li>
-<li>Check [package-url]/[name].zip where [package-url] is the value of the "package-url" entry in the site's ".nanosite" file. Download this to site root.</li>
+<li>Check <code>[name].zip</code> in top-level of site directory</li>
+<li>Check <code>[package-url]/[name].zip</code> where <code>[package-url]</code> is the value of the "package-url" entry in the site's <code>.nanosite</code> file. Download this to site root.</li>
 </ol>
 </li>
 <li>Install package<ol>
-<li>Open "rules.json" in [name].zip. It should be a dictionary { }. Call it rules.</li>
-<li>Install dependencies: go through the import routine for each list item (dependency name) in rules["dependencies"].</li>
-<li>For each key (filename) in rules["files"], call its corresponding value rule. Get the destination path dest by compiling rule["dest"] against the default context (specifically with "OutputDir" and "MetaDir" entries). dest should be relative to the site top directory. Open dest with file mode rule["action"] ("a" for append, "w" for write) and write the contents of the file from [name].zip.</li>
+<li>Open <code>rules.json</code> in <code>[name].zip</code>. It should be a dictionary <code>{}</code>. Call it <code>rules</code>.</li>
+<li>Install dependencies: go through the import routine for each list item (dependency name) in <code>rules["dependencies"]</code>.</li>
+<li>For each key (filename) in <code>rules["files"]</code>, call its corresponding value <code>rule</code>. Get the destination path <code>dest</code> by compiling <code>rule["dest"]</code> against the default context (specifically with <code>OutputDir</code> and <code>MetaDir</code> entries). <code>dest</code> should be relative to the site top directory. Open <code>dest</code> with file mode <code>rule["action"]</code> (<code>"a"</code> for append, <code>"w"</code> for write) and write the contents of the file from <code>[name].zip</code>.</li>
 </ol>
 </li>
 <li>Finalize<ol>
-<li>Add [name] to the array in the ".nanosite" file's "installed-packages" entry</li>
-<li>Delete [name].zip if downloaded from [package-url]</li>
+<li>Add <code>[name]</code> to the array in the <code>.nanosite</code> file's <code>installed-packages</code> entry</li>
+<li>Delete <code>[name].zip</code> if downloaded from <code>[package-url]</code></li>
 </ol>
 </li>
 </ol>
