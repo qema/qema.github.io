@@ -80,7 +80,7 @@
 <p>Triple braces work the same way as in <a href="#basic-fetch">basic fetch</a>, for macros that return HTML.</p>
 <p><strong>Examples:</strong></p>
 <ul>
-<li><code>{{ formatDate date }}</code> &rarr; <code>25 Jul 2016</code></li>
+<li><code>{{ formatDate date }}</code> &rarr; <code>26 Jul 2016</code></li>
 <li><code>{{{ navigationPaneHTML }}}</code></li>
 </ul>
 <h1><a name="control-blocks"></a> control blocks</h1>
@@ -124,6 +124,7 @@
 {{ #endmacro }}
 </code></pre>
 <p><strong>Semantics:</strong> Declares a macro named <code>name</code> that takes parameters <code>context</code>, <code>parameter1</code>, ..., <code>parameterN</code>, and returns the contents of the code block. In the inner code block, the parameters are bound to the values they were called with.</p>
+<p>Typically, macros are declared in <a href="http://wanganzhou.com/nanosite/doc/site-generation.html#macros-py">macros.py</a> and <a href="http://wanganzhou.com/nanosite/doc/site-generation.html#master-tmpl">master.tmpl</a>.</p>
 <p><strong>Examples:</strong></p>
 <ul>
 <li>Macro to create HTML links:<pre><code>{{ #macro createLink url text }}
