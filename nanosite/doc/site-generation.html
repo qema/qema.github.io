@@ -93,8 +93,9 @@ site/                             site/
 <ul>
 <li>A full directory tree of the site<ul>
 <li>Each top-level directory (besides <code>meta/</code> and <code>output/</code>) becomes a variable in the context (the name also gets lowercased.) Its value is a dictionary containing its subdirectories and files.</li>
-<li>Each file becomes a variable (the name is lowercased and all periods are replaced with underscores, so <code>hello.world.txt</code> &rarr; <code>hello_world_txt</code>.) Its value is a dictionary with the following items:<ul>
+<li>Each content file becomes a variable (the name is lowercased and all periods are replaced with underscores, so <code>hello.world.md</code> &rarr; <code>hello_world_md</code>.) Its value is a dictionary with the following items:<ul>
 <li><code>is_file</code>: equals <code>True</code></li>
+<li><code>content</code>: the compiled HTML content of the file</li>
 <li><code>path</code>: full path of the file relative to site top. The extension of the output file is used here, so <code>hello.md</code> has path <code>hello.html</code>.</li>
 <li><code>date</code>: a <a href="https://docs.python.org/2/library/time.html#time.struct_time">Python time struct</a> containing the last date modified.</li>
 </ul>
