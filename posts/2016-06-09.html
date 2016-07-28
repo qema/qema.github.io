@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Paradoxical - Neon Birds</title>
+
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="/scripts/highlight/highlight-tomorrow.css">
+    <script src="/scripts/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Paradoxical</h1></a>
+      <small>A computer science blog.</small>
+      <nav><ul><li><a href='/'>Home</a></li></ul></nav>
+    </header>
+    <section>
+      <article>
+  <small>20 Jul 2016</small>
+  <h2>Neon Birds</h2>
+  <div class="markdown">
+    <p>Full-page version with controls: <a href="/birds/">Neon Birds</a></p>
+<p>The white bird follows your mouse. Lead the flock and create new patterns!</p>
+<p>
+  <script src="/birds/birds.js"></script>
+  <div id="swarm-container" style="position: relative; width: 800px; height: 600px; background: black; max-width: 100%">
+    <canvas id="swarm-canvas" style="margin: auto; max-width: 100%"></canvas>
+    <div id="pause-msg" style="position: absolute; background: black; padding: 1em; left: 0; right: 0; top: 300px; text-align: center; color: white; cursor: default">Click to start</div>
+  </div>
+  <script>
+  init(800, 600, 180);
+  update();
+  turnSpeed = 0.04;
+  paused = true;
+
+  var pauseMsg = document.getElementById("pause-msg");
+  document.getElementById("swarm-container").addEventListener(
+    "mousedown",
+    function() {
+      if (paused) {
+        pauseMsg.style.visibility = "hidden";
+      } else {
+        pauseMsg.style.visibility = "visible";
+      }
+      paused = !paused;
+    }
+  );
+  </script>
+</p>
+
+<h1>About</h1>
+<p>Neon Birds is a flocking simulation. Birds follow three simple rules when flocking:</p>
+<ol>
+<li>Adhesion: Match velocity (speed and direction) with other birds</li>
+<li>Cohesion: Stay close to other birds</li>
+<li>Repulsion: Don't bump into other birds</li>
+</ol>
+<p>The birds are colored by the direction they face. The angular nature of colors (think color wheel) suits this well. Plus, it helps you identify flocks easily, since birds in a flock tend to face the same direction according to rule 1.</p>
+<p>The <a href="/birds/">full-page version</a> has sliders that let you control the strength of the three rules. One thing to try:</p>
+<ul>
+<li>Turn cohesion, turn speed and flock size all the way up to create a giant bird blob.</li>
+<li>Click "fear white bird" and tunnel through the blob - the blob will split and rejoin around you, which is an emergent behavior of the three rules.</li>
+<li>If you have "follow white bird" checked along with "fear", then you can even get the birds to create a circle of fear around you!</li>
+</ul>
+<p>Try other combinations for tons of other interesting emergent patterns.</p>
+<p>Share your pattern discoveries in the new comments section, which you can reach <a href="/posts/2016-06-09.html#disqus_thread">here</a> or by clicking on the title of this post.</p>
+<p>Based on this paper: <a href="http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/">Flocks, Herds, and Schools: A Distributed Behavioral Model</a></p>
+  </div>
+</article>
+<section>
+  <a href="/archive.html">View all posts.</a>
+</section>
+
+<!--
+<section>
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = "/";
+this.page.identifier = "Neon Birds";
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = '//paradoxical.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+</section>
+-->
+    </section>
+    <footer>
+      <div><a href="/rss.xml">Subscribe via RSS</a></div>
+      <div><small>Copyright 2016 Andrew Wang. Powered by <a href="https://github.com/qema/nanosite">nanosite</a>.</small></div>
+    </footer>
+    
+    <!--<script id="dsq-count-scr" src="//paradoxical.disqus.com/count.js" async></script>-->
+  </body>
+</html>
