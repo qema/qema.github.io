@@ -1,0 +1,5 @@
+title: AI Beats QWOP
+
+I made a [Q-Learning AI](https://en.wikipedia.org/wiki/Q-learning) that beats QWOP. You can see it in action in this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e27TUmMkOA0" frameborder="0" style="max-width: 100%" allowfullscreen></iframe>

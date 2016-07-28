@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>{{site.title}}{{#if title}} - {{title}}{{#endif}}</title>
+
+    <link rel="stylesheet" href="{{site.url}}/style.css">
+    
+    <link rel="stylesheet" href="{{site.url}}/scripts/highlight/highlight-tomorrow.css">
+    <script src="{{site.url}}/scripts/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <h1><a href="{{site.url}}/">{{site.title}}</h1></a>
+      <small>{{site.tagline}}</small>
+      <nav>{{{nav}}}</nav>
+    </header>
+    <section>
+      {{{content}}}
+    </section>
+    <footer>
+      <div><a href="{{site.url}}/rss.xml">Subscribe via RSS</a></div>
+      <div><small>Copyright {{#if date}}{{date.tm_year}}{{#endif}} {{site.author}}. Powered by <a href="https://github.com/qema/nanosite">nanosite</a>.</small></div>
+    </footer>
+    
+    <!--<script id="dsq-count-scr" src="//paradoxical.disqus.com/count.js" async></script>-->
+  </body>
+</html>
