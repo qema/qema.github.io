@@ -16,7 +16,7 @@ def make_menu(ctx, start=True, site_url=None):
     out = "<ul>"
     if start:
         site_url = ctx["site"]["url"]
-        ctx = ctx["pages"]
+        ctx = ctx["static"]
         out += "<li><a href='" + site_url + "/'>Home</a></li>"
     for item in sorted(ctx):
         if "isFile" in ctx[item]:
