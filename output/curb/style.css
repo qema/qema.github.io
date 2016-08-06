@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     text-align: center;
 }
 
@@ -236,6 +236,23 @@ h1, h2, h3, h4, h5, h6 {
     background: #f4f4f4;
     color: black;
     padding-bottom: 2em;
+}
+
+strong {
+    font-weight: 500;
+}
+
+blockquote {
+    border: none;
+    font-style: italic;
+    margin-top: 1em;
+}
+
+.quoter {
+    text-align: right;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 2em;
 }
 
 .footer {
@@ -372,7 +389,9 @@ button .btn-carousel {
 }
 
 p img {
-    width: 100%;
+    display: block;
+    margin: auto;
+    max-width: 100%;
     border-radius: 1em;
 }
 
