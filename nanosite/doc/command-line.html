@@ -37,6 +37,30 @@
 </ul>
 
 </p>
+<h1>command line</h1>
+<p>Run <code>nanosite</code> with no arguments to create a new site. If a site exists, run <code>nanosite</code> to start a development server, where you can preview your site live at <code>http://localhost:8000/</code>.</p>
+<p>For more options:</p>
+<ul>
+<li><code>nanosite build</code>: Build the site without running the server.</li>
+<li><code>nanosite serve</code>: Run the server explicitly.<ul>
+<li>Use <code>--port [XXXX]</code> to set a custom port. Default: port 8000.</li>
+</ul>
+</li>
+<li><code>nanosite publish</code>: Runs <code>meta/publish</code>: see <a href="http://wanganzhou.com/nanosite/doc/site-generation.html#publish">publishing</a>.</li>
+<li><code>nanosite import [package-name]</code>: Import a package: see <a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a>.<ul>
+<li>Use <code>--force</code> to force import, even if package already installed.</li>
+<li>Use <code>nanosite --set-package-url [URL]</code> to set the URL of the package repository (and save it as default).</li>
+</ul>
+</li>
+<li><code>nanosite clean</code>: Empty the output directory.</li>
+<li><code>nanosite delete</code>: Delete the whole site.</li>
+</ul>
+<p>Optional arguments:</p>
+<ul>
+<li><code>-s [site-directory]</code>: Use this as the directory of the site to build/serve/publish.</li>
+<li><code>-o [output-directory]</code>: Output to this directory when building/serving.</li>
+<li><code>-m [meta-directory]</code>: Use alternate meta directory.</li>
+</ul>
 </article>
 
     <footer>

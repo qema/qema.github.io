@@ -32,24 +32,29 @@
 <ul>
   <li><a href="http://wanganzhou.com/nanosite/doc/site-generation.html">site generation</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/templates.html">template language</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/command-line.html">command line</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a></li>
 </ul>
 
 </p>
 <h1>site generation</h1>
 <ul>
-<li><a href="#pipeline">the pipeline</a></li>
+<li><a href="#pipeline">the pipeline</a><ul>
+<li><a href="#routing">routing</a></li>
+</ul>
+</li>
 <li><a href="#context">the context</a></li>
 <li><a href="#templates">templates</a></li>
 <li><a href="#key-files">key files</a><ul>
 <li><a href="#macros-py">macros.py</a></li>
 <li><a href="#master-tmpl">master.tmpl</a></li>
 <li><a href="#meta-json">meta.json</a></li>
+<li><a href="#publish">publish</a></li>
 </ul>
 </li>
 </ul>
 <h1><a name="pipeline"></a> the pipeline</h1>
-<p>During site generation, each file is processed and the result is placed in the corresponding path in the output folder. Thus, the directory structure of your project is the directory structure of your site.</p>
+<p>During site generation, each file is processed and the result is placed in the corresponding path in the output folder. Thus, the directory structure of your project is the directory structure of your site. You can change this behavior via <a href="#routing">routing</a>.</p>
 <p>Files are processed as follows:</p>
 <ul>
 <li><code>.md</code>, <code>.md+</code>, and <code>.html+</code> files are <em>content files</em>. They are compiled according to this pipeline:<blockquote>
@@ -67,6 +72,14 @@
 <li>All other files are simply copied to their corresponding positions in the output folder.</li>
 </ul>
 <p>Note that files in the <code>meta/</code> and <code>output/</code> directories do not go through the pipeline.</p>
+<h2><a name="routing"></a> routing</h2>
+<p>Routing can be used to give files a custom output path. Add an entry called "routes" to <a href="#meta-json">meta.json</a>:</p>
+<pre><code>"routes": {
+  "[old-prefix-1]": "[new-prefix-1]",
+  ...
+}
+</code></pre>
+<p>Paths starting with <code>[old-prefix-X]</code> will have this prefix replaced with <code>[new-prefix-X]</code> in the output folder. The paths are given relative to the site top, with no leading slash. For example: <code>"pages/": "/"</code> will cause all files in the <code>pages/</code> directory to be copied to the top level of the output folder.</p>
 <h2>example directory structure</h2>
 <pre><code>- Input -             --&gt;         - Output -
 site/                             site/
@@ -94,7 +107,7 @@ site/                             site/
 <li>A full directory tree of the site<ul>
 <li>Each top-level directory (besides <code>meta/</code> and <code>output/</code>) becomes a variable in the context (the name also gets lowercased.) Its value is a dictionary containing its subdirectories and files.</li>
 <li>Each content file becomes a variable (the name is lowercased and all periods are replaced with underscores, so <code>hello.world.md</code> &rarr; <code>hello_world_md</code>.) Its value is a dictionary with the following items:<ul>
-<li><code>is_file</code>: equals <code>True</code></li>
+<li><code>isFile</code>: equals <code>True</code></li>
 <li><code>content</code>: the compiled HTML content of the file</li>
 <li><code>path</code>: full path of the file relative to site top. The extension of the output file is used here, so <code>hello.md</code> has path <code>hello.html</code>.</li>
 <li><code>date</code>: a <a href="https://docs.python.org/2/library/time.html#time.struct_time">Python time struct</a> containing the last date modified.</li>
@@ -154,7 +167,7 @@ site/                             site/
 </code></pre>
 <h2><a name="meta-json"></a> meta.json</h2>
 <p><code>meta/meta.json</code> contains global variable declarations. Every key in the <code>.json</code> file will become a variable in the global context.</p>
-<p>The <code>site.url</code> entry has a convenience property: the development server changes <code>site.url</code> references to <code>localhost</code>, so that you can work on an entirely local version of your site.</p>
+<p>The <code>site.url</code> entry has a convenience feature attached: the development server changes <code>site.url</code> references to <code>localhost</code> references, so that you can work on an entirely local version of your site.</p>
 <h3>example</h3>
 <pre><code>{
   "site": {
@@ -164,6 +177,19 @@ site/                             site/
     "url": "http://wanganzhou.com/nanosite"
   }
 }
+</code></pre>
+<h2><a name="publish"></a> publish</h2>
+<p><code>meta/publish</code> (<code>meta/publish.bat</code> on Windows) contains your custom publish script. Calling <code>nanosite publish</code> will run this script. You can create a script that best fits your workflow.</p>
+<h3>example</h3>
+<p>Publishing to <a href="https://pages.github.com">GitHub Pages</a>; this assumes you've set up a Git repository in your <code>output/</code> folder, and created a GitHub Pages site with this repository.</p>
+<pre><code>nanosite clean
+nanosite build
+
+pushd output
+git add .
+git commit -m "autopublish"
+git push origin master
+popd
 </code></pre>
 </article>
 

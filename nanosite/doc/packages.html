@@ -32,32 +32,28 @@
 <ul>
   <li><a href="http://wanganzhou.com/nanosite/doc/site-generation.html">site generation</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/templates.html">template language</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/command-line.html">command line</a></li>
   <li><a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a></li>
 </ul>
 
 </p>
 <h1>packages</h1>
-<p>Calling <code>nanosite import [name]</code> will import a package.
-If <code>[name]</code> isn't already in the <code>.nanosite</code> file's <code>installed-packages</code> array:</p>
-<ol>
-<li>Search for package file<ol>
-<li>Check <code>[name].zip</code> in top-level of site directory</li>
-<li>Check <code>[package-url]/[name].zip</code> where <code>[package-url]</code> is the value of the "package-url" entry in the site's <code>.nanosite</code> file. Download this to site root.</li>
-</ol>
-</li>
-<li>Install package<ol>
-<li>Open <code>rules.json</code> in <code>[name].zip</code>. It should be a dictionary <code>{}</code>. Call it <code>rules</code>.</li>
-<li>Install dependencies: go through the import routine for each list item (dependency name) in <code>rules["dependencies"]</code>.</li>
-<li>For each key (filename) in <code>rules["files"]</code>, call its corresponding value <code>rule</code>. Get the destination path <code>dest</code> by compiling <code>rule["dest"]</code> against the default context (specifically with <code>OutputDir</code> and <code>MetaDir</code> entries). <code>dest</code> should be relative to the site top directory. Open <code>dest</code> with file mode <code>rule["action"]</code> (<code>"a"</code> for append, <code>"w"</code> for write) and write the contents of the file from <code>[name].zip</code>.</li>
-</ol>
-</li>
-<li>Finalize<ol>
-<li>Add <code>[name]</code> to the array in the <code>.nanosite</code> file's <code>installed-packages</code> entry</li>
-<li>Delete <code>[name].zip</code> if downloaded from <code>[package-url]</code></li>
-</ol>
-</li>
-</ol>
-<h1>rules.json</h1>
+<p>A package is a collection of files that you can import into your project. Packages contain things like site layouts, macros and themes. From blog templates to RSS, packages can give you a head start on your project.</p>
+<ul>
+<li><a href="#using-packages">using packages</a></li>
+<li><a href="#making-packages">making packages</a></li>
+</ul>
+<h2><a name="using-packages"></a> using packages</h2>
+<p>Calling <code>nanosite import [name]</code> will import or upgrade a package. You can import a package locally or from a package repository:</p>
+<ul>
+<li>Locally: nanosite looks for a <code>[name].zip</code> file in the root of your project.</li>
+<li>From a repository: nanosite will download the package from the online package repository. To point to an alternate repository, use <code>nanosite --set-package-url [repository-url]</code>.</li>
+</ul>
+<p>Use <code>nanosite import [name] --force</code> to force reinstall.</p>
+<p>The package is now imported into your project!</p>
+<h2><a name="making-packages"></a> making packages</h2>
+<p>Packages are simply <code>.zip</code> files with an extra file, <code>rules.json</code>, that describes how the files will be installed during import.</p>
+<h3>rules.json</h3>
 <pre><code>{
   "files": {
     "[filename1.ext]": {"dest": [destination-path], "action": "[a or w]"},
@@ -65,9 +61,24 @@ If <code>[name]</code> isn't already in the <code>.nanosite</code> file's <code>
   },
   "dependencies": [
     "[dependency-name-1]", ...
-  ]
+  ],
+  "version": "[version-number]"
 }
 </code></pre>
+<p><code>rules.json</code> is a dictionary with these entries:</p>
+<ul>
+<li><code>files</code>: dictionary<ul>
+<li>Entries are filenames</li>
+<li>Values are dictionaries with these attributes:<ul>
+<li><code>dest</code>: destination path of file, relative to site top. This is a templated string: <code>{{ MetaDir }}</code> is replaced with the site's <code>meta</code> directory.</li>
+<li><code>action</code>: "w" to write the file to this path. "a" to append the file to the file at this path.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>dependencies</code>: list, names of packages this package requires.</li>
+<li><code>version</code>: a version number, recommended <code>x.x.x</code> format</li>
+</ul>
 </article>
 
     <footer>
