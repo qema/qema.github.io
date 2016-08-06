@@ -27,7 +27,73 @@
 
 
 <article>
-  
+  <p>In this tutorial, we'll make a simple blog from scratch. Along the way, you'll acquire a complete working knowledge of nanosite.</p>
+<h1>1. Set up site</h1>
+<p>After you've <a href="{{site.url}}/download.html">downloaded</a> nanosite, create a new site as follows:</p>
+<pre><code>mkdir MyBlog
+cd MyBlog
+nanosite
+</code></pre>
+<p>nanosite will prompt you to pick a site title, tagline and author name. You are free to change these later.</p>
+<h1>2. Start the server</h1>
+<p>nanosite comes with a development server so you can preview your site as you create it. Start the server by running <code>nanosite serve</code>. Now you can navigate to <a href="http://localhost:8000/">http://localhost:8000/</a> in your favorite browser. You'll want to disable caches during development, since new files are constantly being updated.</p>
+<p>You'll notice that we start out with a blank white page. Time to add some content!</p>
+<h1>3. Edit the master template</h1>
+<p><code>meta/master.tmpl</code> contains the master template, the base HTML code that ends up on every page of your site. You'll notice that right now, it just contains a single line:</p>
+<pre><code>{{{ content }}}
+</code></pre>
+<p>This is a template that says to simply output the raw contents of each file. However, we can let templates do more for us than this. Replace <code>master.tmpl</code> with this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;{{ site.title }}{{ #if title }} - {{ title }}{{ #endif }}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href="{{site.url}}/index.html"&gt;{{ site.title }}&lt;/h1&gt;&lt;/a&gt;
+      &lt;small&gt;{{ site.tagline }}&lt;/small&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+      {{{ content }}}
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This gives us a base template for all pages in our site to follow. During compilation, each page will now be given <code>&lt;html&gt;</code> tags and a consistent header. Notice that templates allow us to access attributes of each page, such as <code>{{ title }}</code> and <code>{{{ content }}}</code>.</p>
+<p><code>{{{ content }}}</code> is central as this is what actually displays the contents of the current page. Note that triple braces are used for attributes containing HTML code.</p>
+<h1>4. Create macros</h1>
+<p><code>meta/macros.py</code> is used to define Python macros, which you can call from templates (like <code>master.tmpl</code>). We'll need some simple date manipulation for our blog, so use <code>nanosite import date</code> to import these functions (you'll have to exit the server with <kbd>Ctrl+C</kbd> first). Specifically, we now have access to functions <code>formatDate</code>, which formats a date into a string, and <code>newest</code>, which gives the newest X pages in a directory.</p>
+<p>After importing, take a look at <code>macros.py</code>. The key is the use of <code>macro("newest", newest)</code> to instantiate a macro in the template system. Learn more about <a href="{{site.url}}/doc/site-generation.html#macros-py">macros</a>.</p>
+<h1>5. Create a test post</h1>
+<p>It's time for your first blog post! Create a folder called <code>posts/</code> in your site directory. Now create <code>posts/my-first-post.md</code> with the following:</p>
+<pre><code>title: My first post!
+
+Hello, world! ...
+</code></pre>
+<p>You can now visit <a href="http://localhost:8000/posts/my-first-post.html">http://localhost:8000/posts/my-first-post.html</a> to view your post.</p>
+<h1>6. Create a post template</h1>
+<p>We'd like to show the title and date of the post along with its contents. So, let's create a "local template" to give specific formatting to each post. Create a file <code>posts/template.tmpl</code> with the following:</p>
+<pre><code>&lt;article&gt;
+  &lt;small&gt;{{ formatDate date }}&lt;/small&gt;
+  &lt;h2&gt;{{ title }}&lt;/h2&gt;
+  {{{ content }}}
+&lt;/article&gt;
+</code></pre>
+<p>If a <code>template.tmpl</code> file lives in a directory, all the files in the directory will be compiled against this template before going to the master template. This way, you can create a specific layout to a group of related pages.</p>
+<p>Notice that we call <code>formatDate</code> with the <code>date</code> parameter, an in-built attribute which gives the date of the file. Furthermore, we use <code>{{ title }}</code> to get the title attribute, which defined on the first line of our post file: <code>title: My first post!</code>.</p>
+<p>Visit <a href="http://localhost:8000/posts/my-first-post.html">http://localhost:8000/posts/my-first-post.html</a> again and observe the formatted date and title appear along with the post itself.</p>
+<h1>7. Show posts on the front page</h1>
+<p>While individual post pages are nice, what we'd really like is to show a list of newest posts on the front page of our site. Thus, let's edit <code>index.html+</code>:</p>
+<pre><code>{{ #for post in newest 5 posts }}
+  &lt;article&gt;
+    &lt;small&gt;{{ formatDate post.date }}&lt;/small&gt;
+    &lt;h2&gt;&lt;a href="{{ site.url }}/{{ post.path }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;
+    {{{ post.content }}}
+  &lt;/article&gt;
+{{ #endfor }}
+</code></pre>
+<p>Notice the <code>#for</code> loop, the use of the macro call <code>newest</code> and the use of dox syntax to access the <code>date</code>, <code>path</code>, <code>title</code> and <code>content</code> attributes, which are now members of the <code>post</code> object.</p>
+<p>Create some more posts in <code>posts/</code>. Now open <a href="http://localhost:8000/">http://localhost:8000/</a> to check out your new post feed. We've created a complete simple blog!</p>
 </article>
 
     <footer>
