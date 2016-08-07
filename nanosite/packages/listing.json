@@ -1,0 +1,14 @@
+{
+  "blog": {
+    "description": "Basic blog layout with posts, pages and archive."
+  },
+  "date": {
+    "description": "Date manipulation and formatting macros."
+  },
+  "menu": {
+    "description": "Adds macro {{{ menu [folder] }}} which creates a menu from the contents of [folder]."
+  },
+  "rss": {
+    "description": "Creates an RSS feed using the contents of folder posts/. Link to rss.xml from your site to link to your RSS feed."
+  }
+}

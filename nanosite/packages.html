@@ -27,7 +27,26 @@
 
 
 <article>
-  
+  <p>This is a listing of packages in the repository. To import one of these packages, use <code>nanosite import [package-name]</code>.</p>
+<div id="listing"></div>
+
+<script>
+function processListing(listing) {
+  var outDiv = document.getElementById("listing");
+  for (var repo in listing) {
+    listing.innerHTML += repo.description + "\n";
+  }
+}
+
+var listing;
+var req = new XMLHttpRequest();
+req.onreadystatechange = function() {
+  listing = JSON.parse(req.responseText);
+  processListing(listing);
+}
+req.open("GET", "http://wanganzhou.com/nanosite/packages/listing.json", true);
+req.send();
+</script>
 </article>
 
     <footer>
