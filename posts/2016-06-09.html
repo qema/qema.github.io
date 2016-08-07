@@ -18,11 +18,11 @@
     <header>
       <h1><a href="/">Paradoxical</h1></a>
       <small>A computer science blog.</small>
-      <nav><ul><li><a href='/'>Home</a></li><li>Games<ul><li><a href='/static/games/land-of-stuff.html'>The Land of Stuff</a></li></ul></li></ul></nav>
+      <nav><ul><li><a href='/'>Home</a></li><li>Games<ul><li><a href='/static/games/land-of-stuff.html'>The Land of Stuff</a></li></ul></li><li><a href='/static/projects.html'>Projects</a></li></ul></nav>
     </header>
     <section>
       <article>
-  <small>2 Aug 2016</small>
+  <small>9 Jun 2016</small>
   <h2>Neon Birds</h2>
   <div class="markdown">
     <p>Full-page version with controls: <a href="/birds/">Neon Birds</a></p>
@@ -44,11 +44,9 @@
     "mousedown",
     function() {
       if (paused) {
-        pauseMsg.style.visibility = "hidden";
-      } else {
-        pauseMsg.style.visibility = "visible";
+    pauseMsg.style.visibility = "hidden";
+    paused = false;
       }
-      paused = !paused;
     }
   );
   </script>

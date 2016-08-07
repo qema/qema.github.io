@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Paradoxical - The Land of Stuff</title>
+    <title>Paradoxical - Projects</title>
 
     <link rel="stylesheet" href="/style.css">
     
@@ -22,18 +22,22 @@
     </header>
     <section>
       <article>
-  <h2>The Land of Stuff</h2>
+  <h2>Projects</h2>
   <div class="markdown">
-    <p>The Land of Stuff is an online multiplayer role-playing game. You can explore a vast world solo or with friends, battling monsters, gaining loot and completing story quests.</p>
-<p>The full game is available for download here: <a href="/downloads/land-of-stuff.zip">The Land of Stuff</a>. (Requires Windows)</p>
-<p>Check out the project page on GitHub <a href="https://github.com/losmmorpg/land-of-stuff">here</a>.</p>
-<h2>Gallery</h2>
-<p><img alt="Level Up!" src="/images/los/34str.png" /></p>
-<p><img alt="Ezak Clud" src="/images/los/screen26.png" /></p>
-<p><img alt="Cheese!" src="/images/los/people.png" /></p>
-<p><img alt="The Wastelands" src="/images/los/screen29.png" /></p>
-<p><img alt="Magic Shop" src="/images/los/screen30.png" /></p>
-<p><img alt="The Sorcerer" src="/images/los/screen31.png" /></p>
+    <div id="grid">
+  <div class="grid-item">
+    <img src="/images/project-icons/birds.png" width="50%">
+    <div>Neon Birds</div>
+  </div>
+<div class="grid-item">best2</div>
+</div>
+
+<script>
+var grid = document.getElementById("grid");
+imagesLoaded(grid).progress(function() {
+  grid.masonry({itemSelector: ".grid-item", columnWidth: "25%"});
+});
+</script>
   </div>
 </article>
 <section>

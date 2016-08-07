@@ -18,12 +18,34 @@
     <header>
       <h1><a href="/">Paradoxical</h1></a>
       <small>A computer science blog.</small>
-      <nav><ul><li><a href='/'>Home</a></li><li>Games<ul><li><a href='/static/games/land-of-stuff.html'>The Land of Stuff</a></li></ul></li></ul></nav>
+      <nav><ul><li><a href='/'>Home</a></li><li>Games<ul><li><a href='/static/games/land-of-stuff.html'>The Land of Stuff</a></li></ul></li><li><a href='/static/projects.html'>Projects</a></li></ul></nav>
     </header>
     <section>
       
 <article>
-  <small>2 Aug 2016</small>
+  <small>7 Aug 2016</small>
+  <h2><a href="/posts/2016-08-06.html">nanosite</a></h2>
+  <div class="markdown">
+    <p>nanosite is the culmination of a year-long effort to create a better general-purpose static site generator.</p>
+<p>Static sites comprise most of the content on the internet. These are sites like blogs and organization pages, where there isn't constant back-and-forth communication with a server (unlike, for example, Facebook, where users can post and send messages). This makes them incredibly easy to set up and host &mdash; there are now free services like <a href="https://pages.github.com">GitHub Pages</a> dedicated to serving static sites.</p>
+<p>People are now using these to put up personal blogs, portfolios, project and company pages. Static sites are evolving and are being used for more and more ambitious and varied projects. It's an awesome way internet content is becoming more democratized.</p>
+<p>In the face of this development, traditional, blog-centric static site generators like Jekyll and Hugo seem backwards and constraining. Increasingly savvy creators want more control over the structure and design of their sites. nanosite attempts to meet this need with a minimalist, flexible design that places no constraint on the structure of your site.</p>
+<p>nanosite now has its own page: <a href="/nanosite">nanosite</a>. Give it a try on your next project and become part of the static site revolution!</p>
+<p>nanosite is open-source and contributors are welcome. Check us out on GitHub: <a href="https://github.com/qema/nanosite">nanosite</a>.</p>
+  </div>
+</article>
+
+<article>
+  <small>20 Jul 2016</small>
+  <h2><a href="/posts/2016-07-20.html">AI Beats QWOP</a></h2>
+  <div class="markdown">
+    <p>I made a <a href="https://en.wikipedia.org/wiki/Q-learning">Q-Learning AI</a> that beats QWOP. You can see it in action in this video:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e27TUmMkOA0" frameborder="0" style="max-width: 100%" allowfullscreen></iframe>
+  </div>
+</article>
+
+<article>
+  <small>9 Jun 2016</small>
   <h2><a href="/posts/2016-06-09.html">Neon Birds</a></h2>
   <div class="markdown">
     <p>Full-page version with controls: <a href="/birds/">Neon Birds</a></p>
@@ -45,11 +67,9 @@
     "mousedown",
     function() {
       if (paused) {
-        pauseMsg.style.visibility = "hidden";
-      } else {
-        pauseMsg.style.visibility = "visible";
+    pauseMsg.style.visibility = "hidden";
+    paused = false;
       }
-      paused = !paused;
     }
   );
   </script>
@@ -76,16 +96,7 @@
 </article>
 
 <article>
-  <small>2 Aug 2016</small>
-  <h2><a href="/posts/2016-07-20.html">AI Beats QWOP</a></h2>
-  <div class="markdown">
-    <p>I made a <a href="https://en.wikipedia.org/wiki/Q-learning">Q-Learning AI</a> that beats QWOP. You can see it in action in this video:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/e27TUmMkOA0" frameborder="0" style="max-width: 100%" allowfullscreen></iframe>
-  </div>
-</article>
-
-<article>
-  <small>2 Aug 2016</small>
+  <small>6 Jun 2016</small>
   <h2><a href="/posts/2016-06-06.html">Hello, World!</a></h2>
   <div class="markdown">
     <p><img alt="Beebe Lake" src="/images/photos/beebe.jpg" /></p>
