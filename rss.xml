@@ -8,11 +8,6 @@
 
   
     <item>
-      <title>Hello, World!</title>
-      <link>/posts/2016-06-06.html</link>
-    </item>
-  
-    <item>
       <title>AI Beats QWOP</title>
       <link>/posts/2016-07-20.html</link>
     </item>
@@ -20,6 +15,11 @@
     <item>
       <title>Neon Birds</title>
       <link>/posts/2016-06-09.html</link>
+    </item>
+  
+    <item>
+      <title>Hello, World!</title>
+      <link>/posts/2016-06-06.html</link>
     </item>
   
 </channel>
