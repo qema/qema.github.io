@@ -14,14 +14,15 @@ h6 { font-size: 12px; }
 
 @media only screen and (min-width: 768px){
     body {
-	margin: 0 16.667%;
+	width: 66.666%;
+	margin: auto;
     }
 }
 
 body {
     padding: 0;
     font-family: Merriweather, serif;
-    font-size: 14px;
+    font-size: 14.4px;
 }
 
 h1 a, h2 a, h3 a {
@@ -97,8 +98,8 @@ nav ul li ul li a:hover {
 
 p {
     margin-top: 0;
-    margin-bottom: 10px;
-    line-height: 1.4;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
 }
 
 pre, code {
@@ -133,6 +134,13 @@ footer {
 /* masonry */
 .grid-item {
     display: inline-block;
+    background: #ddd;
+    border-radius: 1em;
+    padding: 1%;
+    margin: 0.5%;
+}
+.grid-item img {
+    border-radius: 1em;
 }
 .grid-item 1x1 {
     width: 25%;

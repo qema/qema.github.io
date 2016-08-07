@@ -1,0 +1,13 @@
+title: nanosite
+
+nanosite is the culmination of a year-long effort to create a better general-purpose static site generator.
+
+Static sites comprise most of the content on the internet. These are sites like blogs and organization pages, where there isn't constant back-and-forth communication with a server (unlike, for example, Facebook, where users can post and send messages). This makes them incredibly easy to set up and host &mdash; there are now free services like [GitHub Pages](https://pages.github.com) dedicated to serving static sites.
+
+People are now using these to put up personal blogs, portfolios, project and company pages. Static sites are evolving and are being used for more and more ambitious and varied projects. It's an awesome way internet content is becoming more democratized.
+
+In the face of this development, traditional, blog-centric static site generators like Jekyll and Hugo seem backwards and constraining. Increasingly savvy creators want more control over the structure and design of their sites. nanosite attempts to meet this need with a minimalist, flexible design that places no constraint on the structure of your site.
+
+nanosite now has its own page: [nanosite]({{site.url}}/nanosite). Give it a try on your next project and become part of the static site revolution!
+
+nanosite is open-source and contributors are welcome. Check us out on GitHub: [nanosite](https://github.com/qema/nanosite).

@@ -20,12 +20,10 @@ The white bird follows your mouse. Lead the flock and create new patterns!
   document.getElementById("swarm-container").addEventListener(
     "mousedown",
     function() {
-	  if (paused) {
-	    pauseMsg.style.visibility = "hidden";
-	  } else {
-	    pauseMsg.style.visibility = "visible";
-	  }
-	  paused = !paused;
+      if (paused) {
+	pauseMsg.style.visibility = "hidden";
+	paused = false;
+      }
     }
   );
   </script>

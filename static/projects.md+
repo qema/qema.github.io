@@ -1,7 +1,10 @@
 title: Projects
 
 <div id="grid">
-<div class="grid-item"><div>Neon Birds</div><img src="{{site.url}}/images/project-icons/birds.png" width="50%"></div>
+  <div class="grid-item">
+    <img src="{{site.url}}/images/project-icons/birds.png" width="50%">
+    <div>Neon Birds</div>
+  </div>
 <div class="grid-item">best2</div>
 </div>
 

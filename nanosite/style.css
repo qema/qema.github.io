@@ -88,7 +88,7 @@ nav li {
     margin-right: 0.75em;
 }
 @media (min-width: 1100px) {
-    nav li:not(:first-child) {
+    nav li {
 	margin-top: 0;
 	margin-left: 1.5em;
 	margin-right: 0;
