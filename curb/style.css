@@ -285,7 +285,8 @@ blockquote {
     margin-top: 1em;
 }
 .btn {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid #337ab7;
     color: #337ab7;
     background: none;
