@@ -1,0 +1,16 @@
+title: Projects
+
+<div id="grid">
+  <div class="grid-item">
+    <img src="{{site.url}}/images/project-icons/birds.png" width="50%">
+    <div>Neon Birds</div>
+  </div>
+<div class="grid-item">best2</div>
+</div>
+
+<script>
+var grid = document.getElementById("grid");
+imagesLoaded(grid).progress(function() {
+  grid.masonry({itemSelector: ".grid-item", columnWidth: "25%"});
+});
+</script>
