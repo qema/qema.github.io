@@ -2,7 +2,9 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    margin: 0;
+    line-height: 1.3;
+    margin-top: 1em;
+    margin-bottom: 0;
 }
 
 h1 { font-size: 36px; }
@@ -14,8 +16,9 @@ h6 { font-size: 12px; }
 
 @media only screen and (min-width: 768px){
     body {
-	width: 66.666%;
-	margin: auto;
+        width: 55%; /*6.666%;*/
+        margin: auto;
+        background: #ececec;
     }
 }
 
@@ -27,6 +30,7 @@ body {
 
 h1 a, h2 a, h3 a {
     text-decoration: none;
+    color: black;
 }
 h1 a:hover, h2 a:hover, h3 a:hover {
     color: black;
@@ -64,7 +68,7 @@ nav li a {
 nav ul li:hover {
     cursor: default;
     text-decoration: underline;
-    color: darkred;
+    color: #991200;
 }
 
 nav ul li ul {
@@ -93,13 +97,20 @@ nav ul li ul li {
 
 nav ul li ul li a:hover {
     text-decoration: none;
-    color: red;
+    color: #991200;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1.5em;
+    margin-top: 1.3em;
+    margin-bottom: 0;
     line-height: 1.5;
+}
+h1 + p, h2 + p, h3 + p {
+    margin-top: 0;
+}
+
+ul {
+    margin-top: 0;
 }
 
 pre, code {
@@ -118,17 +129,17 @@ article {
 
 a {
     text-decoration: underline;
-    color: black;
+    color: #000;
 }
 a:hover {
+    color: #991200;
     text-decoration: underline;
-    color: red;
 }
 
 footer {
     text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
 
 /* masonry */

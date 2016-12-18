@@ -1,7 +1,7 @@
 {
   "site": {"title": "Paradoxical",
 	   "author": "Andrew Wang",
-	   "tagline": "A computer science blog.",
+	   "tagline": "Adventures in computer science.",
 	   "url": ""
   },
   "routes": {
