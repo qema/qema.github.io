@@ -27,7 +27,7 @@ ol li:nth-child(5) a:first-child { color: #0220b2; }
 ol li:nth-child(6) a:first-child { color: #b22ab2; }
 </style>
 
-1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to learn information about power dynamics between speakers, constructiveness of discussions and more.
+1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain information about power dynamics between speakers, constructiveness of discussions and more.
 2. [Nanosite]({{site.url}}/nanosite). Modern, elegant static-site generator. Let's lead the static site revolution!
 3. [Neon Birds]({{site.url}}/birds). Colorful interactive simulation of swarming behavior in birds.
 4. [QWOP AI](https://www.youtube.com/watch?v=e27TUmMkOA0). Reinforcement-learning AI agent that learns to beat the game [QWOP](https://www.foddy.net/Athletics.html).
