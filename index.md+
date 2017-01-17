@@ -21,7 +21,7 @@ ol li {
 }
 ol li:nth-child(1) a:first-child { color: #991200; }
 ol li:nth-child(1) a:first-child:hover { color: #e62100; }
-ol li:nth-child(2) a:first-child { color: #999900; }
+ol li:nth-child(2) a:first-child { color: #a88a00; }
 ol li:nth-child(2) a:first-child:hover { color: #e6c000; }
 ol li:nth-child(3) a:first-child { color: #00a600; }
 ol li:nth-child(3) a:first-child:hover { color: #00d900; }
@@ -33,7 +33,7 @@ ol li:nth-child(6) a:first-child { color: #b22ab2; }
 ol li:nth-child(6) a:first-child:hover { color: #e639e6; }
 </style>
 
-1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain information about power dynamics between speakers, constructiveness of discussions and more.
+1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain insight into power dynamics between speakers, constructiveness of discussions and more.
 2. [Nanosite]({{site.url}}/nanosite). Modern, elegant static-site generator. Let's lead the static site revolution!
 3. [Neon Birds]({{site.url}}/birds). Colorful interactive simulation of swarming behavior in birds.
 4. [QWOP AI](https://www.youtube.com/watch?v=e27TUmMkOA0). Reinforcement-learning AI agent that learns to beat the game [QWOP](https://www.foddy.net/Athletics.html).
