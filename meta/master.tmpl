@@ -15,17 +15,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header>
-      <h1><a href="{{site.url}}/">{{site.title}}</h1></a>
-      <small>{{site.tagline}}</small>
-    </header>
-    <section>
-      {{{content}}}
-    </section>
-    <footer>
-      <div><small>Copyright {{#if date}}{{date.tm_year}}{{#endif}} {{site.author}}. Powered by <a href="https://wanganzhou.com/nanosite">nanosite</a>.</small></div>
-    </footer>
-    
+    <div class="container">
+      <header>
+        <h1><a href="{{site.url}}/">{{site.title}}</h1></a>
+        <small>{{site.tagline}}</small>
+      </header>
+      <section>
+        {{{content}}}
+      </section>
+      <footer>
+        <div><small>Copyright {{#if date}}{{date.tm_year}}{{#endif}} {{site.author}}. Powered by <a href="https://wanganzhou.com/nanosite">nanosite</a>.</small></div>
+      </footer>
+    </div> 
     <!--<script id="dsq-count-scr" src="//paradoxical.disqus.com/count.js" async></script>-->
   </body>
 </html>
