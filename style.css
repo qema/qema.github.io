@@ -15,7 +15,7 @@ h4, .markdown h2 { font-size: 18px; }
 h5, .markdown h3 { font-size: 14px; }
 h6 { font-size: 12px; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
     body {
         width: 100%;/*55%;*/ /*6.666%;*/
         margin: 0;
@@ -35,7 +35,7 @@ h6 { font-size: 12px; }
 }
 
 body {
-    padding: 0;
+    padding: 0em 1em;
     font-family: Merriweather, serif;
     font-size: 14.4px;
 }
