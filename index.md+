@@ -1,7 +1,9 @@
 ## Me
 <img src="{{site.url}}/images/me.jpg" style="width: 40%">
 
-Hello! I'm Andrew Wang. I'm a Dean's Scholar at Cornell majoring in Computer Science and Philosophy. I'm interested in social and information networks and the game-theoretic roots of social interaction &mdash; social processes are fascinatingly fundamental. Working with [Professor Danescu-Niculescu-Mizil](http://www.cs.cornell.edu/~cristian/).
+Hello! I'm Andrew Wang. I'm a Dean's Scholar at Cornell majoring in Computer Science and Philosophy. I'm interested in social and information networks and the game-theoretic roots of social interaction &mdash; social processes are fascinatingly fundamental. Working with Professor [Cristian Danescu-Niculescu-Mizil](http://www.cs.cornell.edu/~cristian/).
+
+Summer 2017: Studying social networks at the [EPFL Data Science Lab](https://dlab.epfl.ch) with Professor [Robert West](https://dlab.epfl.ch/people/west/).
 
 Find me on:
 
@@ -34,7 +36,8 @@ ol li:nth-child(6) a:first-child:hover { color: #e639e6; }
 </style>
 
 1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain insight into power dynamics between speakers, constructiveness of discussions and more.
-2. [Nanosite]({{site.url}}/nanosite). Modern, elegant static-site generator. Let's lead the static site revolution!
+2. [Streetcrowd](http://streetcrowd.us). Multiplayer world-exploration game developed by Cornell NLP.
 3. [Neon Birds]({{site.url}}/birds). Colorful interactive simulation of swarming behavior in birds.
-4. [QWOP AI](https://www.youtube.com/watch?v=e27TUmMkOA0). Reinforcement-learning AI agent that learns to beat the game [QWOP](https://www.foddy.net/Athletics.html).
-5. [The Land of Stuff MMO]({{site.url}}/land-of-stuff). Online multiplayer adventure game. You can explore a vast world solo or with friends, battling monsters and other players, gaining loot and completing story quests.
+4. [Nanosite]({{site.url}}/nanosite). Modern, elegant static-site generator. Let's lead the static site revolution!
+5. [QWOP AI](https://www.youtube.com/watch?v=e27TUmMkOA0). Reinforcement-learning AI agent that learns to beat the game [QWOP](https://www.foddy.net/Athletics.html).
+6. [The Land of Stuff MMO]({{site.url}}/land-of-stuff). Online multiplayer adventure game. You can explore a vast world solo or with friends, battling monsters and other players, gaining loot and completing story quests.
