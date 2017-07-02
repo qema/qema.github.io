@@ -138,7 +138,7 @@ site/                             site/
 <h2><a name="macros-py"></a> macros.py</h2>
 <p><code>meta/macros.py</code> is used to define macros that call Python functions. Code in this file has access to two special functions:</p>
 <ul>
-<li><code>macro(name, function)</code>: <code>function</code> is a Python function that takes in a <code>context</code> and any macro parameters (in that order), and returns some value. <code>name</code> is the name of the macro. This creates a globally accessible macro which calls the Python function when the macro is invoked.</li>
+<li><code>macro(name, function)</code>: <code>function</code> is a Python function that takes in a <code>context</code> and any macro parameters (in that order), and returns any value. <code>name</code> is the name of the macro. This creates a macro which calls the Python function when the macro is invoked, and appends the return value to the page.</li>
 <li><code>fetch(context, key)</code>: returns the value of variable <code>key</code> in <code>context</code>. <code>key</code> can contain dots for nested access, e.g. <code>site.url</code>; or spaces for macro calls, e.g. <code>formatDate date</code>.</li>
 </ul>
 <h3>examples</h3>
