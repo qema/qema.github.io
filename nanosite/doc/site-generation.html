@@ -102,7 +102,7 @@ site/                             site/
     codesamples.md+                 codesamples.html
 </code></pre>
 <h1><a name="context"></a> the context</h1>
-<p>When a templated content file is compiled, it has access to a <em>context</em>, a set of variables that it can access. The context contains:</p>
+<p>Each templated file gets its own <em>context</em>, a set of variables that it can access. The context contains:</p>
 <ul>
 <li>A full directory tree of the site<ul>
 <li>Each top-level directory (besides <code>meta/</code> and <code>output/</code>) becomes a variable in the context (the name also gets lowercased.) Its value is a dictionary containing its subdirectories and files.</li>
@@ -124,7 +124,7 @@ site/                             site/
 <p>During site generation, each file is compiled against its <em>local template</em> (a file called <code>template.tmpl</code> in the file's directory, or if it doesn't exist, in the shallowest parent directory). Then, that output is compiled against the <em>master template</em>, <code>meta/master.tmpl</code> (see <a href="#master-tmpl">master.tmpl</a>).</p>
 <p>When a file is compiled against a template, a variable called <code>content</code> is created, with the (HTML) contents of the file as its value. Thus, the template has access to the input file through the template call, <code>{{{ content }}}</code>, as well as the rest of the file's context.</p>
 <h2>example</h2>
-<p>Here is a "blog post" template that formats each post file in <code>posts/</code>:</p>
+<p>Here is a "blog post" template. If you save it as <code>template.tmpl</code> in a directory called <code>posts</code>, it will format each post file in <code>posts/</code> with a date and title header:</p>
 <pre><code>&lt;article&gt;
   &lt;small&gt;{{ formatDate date }}&lt;/small&gt;
   &lt;div&gt;{{ title }}&lt;/div&gt;
