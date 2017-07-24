@@ -87,7 +87,7 @@ Hello, world! ...
 &lt;/article&gt;
 </code></pre>
 <p>If a <code>template.tmpl</code> file lives in a directory, all the files in the directory will be compiled against this template before going to the master template. This way, you can create a template specific to a group of related pages.</p>
-<p>Notice that we call <code>formatDate</code> with the <code>date</code> parameter, an in-built attribute which gives the date of the file being compiled. Furthermore, we use <code>tutorial</code> to get the file's title attribute, which we defined on the first line of our post file: <code>title: My first post!</code>.</p>
+<p>Notice that we call <code>formatDate</code> with the <code>date</code> parameter, an in-built attribute which gives the date of the file being compiled. Furthermore, we use <code>{{ title }}</code> to get the file's title attribute, which we defined on the first line of our post file: <code>title: My first post!</code>.</p>
 <p>Visit <a href="http://localhost:8000/posts/my-first-post.html">http://localhost:8000/posts/my-first-post.html</a> again and observe the formatted date and title appear along with the post itself.</p>
 <p>Learn more about the site generation pipeline: <a href="http://wanganzhou.com/nanosite/doc/site-generation.html#pipeline">the pipeline</a>.</p>
 <h1>8. Show posts on the front page</h1>
