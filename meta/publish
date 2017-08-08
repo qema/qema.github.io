@@ -3,7 +3,7 @@
 nanosite clean
 nanosite build
 
-echo "" > output/.nojekyll
+touch output/.nojekyll
 
 git add .
 git commit -m "autopublish"
