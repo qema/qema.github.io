@@ -3,6 +3,8 @@
 nanosite clean
 nanosite build
 
+echo "" > build/.nojekyll
+
 git add .
 git commit -m "autopublish"
 git subtree push --prefix=output/ output master
