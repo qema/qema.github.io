@@ -1,0 +1,39 @@
+<h1>Cornell Conversational Analysis Toolkit (version 2.0)</h1>
+<p>This toolkit contains tools to extract conversational features and analyze social phenomena in conversations.  Several large <a href="http://zissou.infosci.cornell.edu/socialkit/datasets/">conversational datasets</a> are included together with scripts exemplifying the use of the toolkit on these datasets.</p>
+<p>The toolkit currently implements features for:</p>
+<ul>
+<li>
+<p><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/Coordination_README.md">Linguistic coordination</a>, a measure of relative power between individuals or groups based on their use of function words (see the <a href="https://www.cs.cornell.edu/~cristian/Echoes_of_power.html">Echoes of Power</a> paper)</p>
+</li>
+<li>
+<p><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/QuestionTypology_README.md">Question typology</a>, a method for extracting surface motifs that recur in questions, and for grouping them according to their latent rhetorical role (see the <a href="http://www.cs.cornell.edu/~cristian/Asking_too_much.html">Asking too much</a> paper). Optional parameters are also provided to use this method for extracting motifs from general conversational prompts, not just questions (see the <a href="http://www.cs.cornell.edu/~cristian/Conversations_gone_awry.html">Conversations gone awry</a> paper)</p>
+</li>
+<li>
+<p><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/Politeness_README.md">Politeness strategies</a>, a set of lexical and parse-based features correlating with politeness and impoliteness (see the <a href="https://www.cs.cornell.edu/~cristian/Politeness.html">A computational approach to politeness</a> paper)</p>
+</li>
+<li>
+<p>Coming soon: Basic message and turn features, currently available here <a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/tree/constructive/cornellversation/constructive">Constructive conversations</a></p>
+</li>
+</ul>
+<h2>Datasets</h2>
+<p>These datasets are included for ready use with the toolkit:
+- <a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/datasets/conversations-gone-awry-corpus/awry.README.v1.00.txt">Conversations Gone Awry Corpus</a>: a collection of paired conversations from Wikipedia editors' talk pages (1,270 conversations, 6,963 comments)
+- <a href="http://www.cs.cornell.edu/~liye/tennis_README.txt">Tennis Corpus</a>: transcripts for tennis singles post-match press conferences for major tournaments between 2007 to 2015 (6467 post-match press conferences)
+- <a href="http://www.cs.cornell.edu/~cristian/Echoes_of_power_files/wikipedia.talkpages.README.v1.01.txt">Wikipedia Talk Pages Corpus</a>: collection of conversations from Wikipedia editors' talk pages
+- <a href="http://www.cs.cornell.edu/~cristian/Echoes_of_power_files/supreme.README.v1.01.txt">Supreme Court Corpus</a>: collection of conversations from the U.S. Supreme Court Oral Arguments
+- <a href="http://www.cs.cornell.edu/~cristian/Asking_too_much_files/paper-questions.pdf">Parliament Corpus</a>: parliamentary question periods from May 1979 to December 2016 (216,894 question-answer pairs)</p>
+<h2>Usage</h2>
+<p><strong>Installation</strong>
+1. Install or use <code>Python 3</code>.
+2. Run <code>python3 setup.py install</code> to install the package.
+3. Run <code>python -m spacy download en</code></p>
+<p><strong>Use</strong></p>
+<p>Use <code>import convokit</code> to import it into your project.</p>
+<p>Detailed installation and usage examples are also provided on the specific pages dedicated to each function of this toolkit.</p>
+<h2>Documentation</h2>
+<p>Documentation is hosted <a href="http://zissou.infosci.cornell.edu/socialkit/documentation/">here</a>.</p>
+<p>The documentation is built with <a href="http://www.sphinx-doc.org/en/1.5.1/">Sphinx</a> (<code>pip3 install sphinx</code>). To build it yourself, navigate to <code>doc/</code> and run <code>make html</code>. </p>
+<h2>Acknowledgements</h2>
+<p>Andrew Wang (azw7@cornell.edu)  wrote the Coordination code and the respective example script, wrote the helper functions and designed the structure of the toolkit.</p>
+<p>Ishaan Jhaveri (iaj8@cornell.edu) refactored the Question Typology code and wrote the respective example scripts.</p>
+<p>Jonathan Chang (jpc362@cornell.edu) wrote the example script for Conversations Gone Awry.</p>
