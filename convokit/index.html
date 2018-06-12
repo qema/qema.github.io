@@ -1,114 +1,47 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Convokit &#8212; convokit 0.0.1 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/overrides.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Coordination" href="coordination.html" /> 
+    <link rel="stylesheet" href="http://localhost:8000/style.css">
   </head>
   <body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="coordination.html" title="Coordination"
-             accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">convokit 0.0.1 documentation</a> &#187;</li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="convokit">
-<h1>Convokit<a class="headerlink" href="#convokit" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
+    <header>
+      <h1><span style="color: #a00">Cornell</span> Conversational Analysis Toolkit</h1>
+    </header>
+    <p>This toolkit contains tools to extract conversational features and analyze social phenomena in conversations.  Several large <a href="http://zissou.infosci.cornell.edu/socialkit/datasets/">conversational datasets</a> are included, together with scripts exemplifying the use of the toolkit on these datasets.</p>
+<p>The toolkit currently implements features for:</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="coordination.html">Coordination</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">Utility functions</a></li>
+<li><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/Coordination_README.md">Linguistic coordination</a>, a measure of relative power between individuals or groups based on their use of function words (see the <a href="https://www.cs.cornell.edu/~cristian/Echoes_of_power.html">Echoes of Power</a> paper)</li>
+<li><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/QuestionTypology_README.md">Question typology</a>, a method for extracting surface motifs that recur in questions, and for grouping them according to their latent rhetorical role (see the <a href="http://www.cs.cornell.edu/~cristian/Asking_too_much.html">Asking too much</a> paper). Optional parameters are also provided to use this method for extracting motifs from general conversational prompts, not just questions (see the <a href="http://www.cs.cornell.edu/~cristian/Conversations_gone_awry.html">Conversations gone awry</a> paper)</li>
+<li><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/blob/master/Politeness_README.md">Politeness strategies</a>, a set of lexical and parse-based features correlating with politeness and impoliteness (see the <a href="https://www.cs.cornell.edu/~cristian/Politeness.html">A computational approach to politeness</a> paper)</li>
+<li>Coming soon: discussion constructiveness, currently available here: <a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/tree/constructive/cornellversation/constructive">Constructive conversations</a></li>
 </ul>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Next topic</h4>
-  <p class="topless"><a href="coordination.html"
-                        title="next chapter">Coordination</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="coordination.html" title="Coordination"
-             >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">convokit 0.0.1 documentation</a> &#187;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 Cornell NLP.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-    </div>
+<h2>Datasets</h2>
+<p>These datasets are included for ready use with the toolkit:</p>
+<ul>
+<li><a href="https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit/datasets/conversations-gone-awry-corpus/awry.README.v1.00.txt">Conversations Gone Awry Corpus</a>: a collection of paired conversations from Wikipedia editors' talk pages (1,270 conversations, 6,963 comments)</li>
+<li><a href="http://www.cs.cornell.edu/~liye/tennis_README.txt">Tennis Corpus</a>: transcripts for tennis singles post-match press conferences for major tournaments between 2007 to 2015 (6,467 post-match press conferences)</li>
+<li><a href="http://www.cs.cornell.edu/~cristian/Echoes_of_power_files/wikipedia.talkpages.README.v1.01.txt">Wikipedia Talk Pages Corpus</a>: collection of conversations from Wikipedia editors' talk pages</li>
+<li><a href="http://www.cs.cornell.edu/~cristian/Echoes_of_power_files/supreme.README.v1.01.txt">Supreme Court Corpus</a>: collection of conversations from the U.S. Supreme Court Oral Arguments</li>
+<li><a href="http://www.cs.cornell.edu/~cristian/Asking_too_much_files/paper-questions.pdf">Parliament Corpus</a>: parliamentary question periods from May 1979 to December 2016 (216,894 question-answer pairs)</li>
+</ul>
+<h2>Usage</h2>
+<h3>Installation</h3>
+<ol>
+<li>Install or use <code>Python 3</code>.</li>
+<li>Run <code>python3 setup.py install</code> to install the package.</li>
+<li>Run <code>python -m spacy download en</code></li>
+</ol>
+<h3>Use</h3>
+<p>Use <code>import convokit</code> to import it into your project.</p>
+<p>Detailed installation and usage examples are also provided on the specific pages dedicated to each function of this toolkit.</p>
+<h2>Documentation</h2>
+<p>Documentation is hosted <a href="http://zissou.infosci.cornell.edu/socialkit/documentation/">here</a>.</p>
+<p>The documentation is built with <a href="http://www.sphinx-doc.org/en/1.5.1/">Sphinx</a> (<code>pip3 install sphinx</code>). To build it yourself, navigate to <code>doc/</code> and run <code>make html</code>. </p>
+<h2>Acknowledgements</h2>
+<p>Andrew Wang (<a href="mailto:azw7@cornell.edu">azw7@cornell.edu</a>) wrote the Coordination code and the respective example script, wrote the helper functions and designed the structure of the toolkit.</p>
+<p>Ishaan Jhaveri (<a href="mailto:iaj8@cornell.edu">iaj8@cornell.edu</a>) refactored the Question Typology code and wrote the respective example scripts.</p>
+<p>Jonathan Chang (<a href="mailto:jpc362@cornell.edu">jpc362@cornell.edu</a>) wrote the example script for Conversations Gone Awry.</p>
+    <footer>
+      <small>Copyright 2018 Cornell NLP. Built with <a href="http://wanganzhou.com/nanosite">nanosite</a>.</small>
+    </footer>
   </body>
 </html>
