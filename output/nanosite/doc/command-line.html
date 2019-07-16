@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>nanosite - documentation</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://wanganzhou.com/nanosite/scripts/highlight/highlight.css">
+    <script src="http://wanganzhou.com/nanosite/scripts/highlight/highlight.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    
+    <link rel="stylesheet" href="http://wanganzhou.com/nanosite/style.css">
+  </head>
+  <body>
+    <header>
+      <h1><a href="http://wanganzhou.com/nanosite/index.html">nanosite</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="http://wanganzhou.com/nanosite/tutorial.html">Tutorial</a></li><li><a href="http://wanganzhou.com/nanosite/doc/index.html">Documentation</a></li><li><a href="http://wanganzhou.com/nanosite/packages.html">Packages</a></li><li><a href="http://wanganzhou.com/nanosite/download.html">Download</a></li>
+	</ul>
+      </nav>
+    </header>
+    
+<h2>documentation</h2>
+
+
+<article>
+  <p>
+
+<ul>
+  <li><a href="http://wanganzhou.com/nanosite/doc/site-generation.html">site generation</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/templates.html">template language</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/command-line.html">command line</a></li>
+  <li><a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a></li>
+</ul>
+
+</p>
+<h1>command line</h1>
+<p>Run <code>nanosite</code> with no arguments to create a new site. If a site exists, run <code>nanosite</code> to start a development server, where you can preview your site live at <code>http://localhost:8000/</code>.</p>
+<p>For more options:</p>
+<ul>
+<li><code>nanosite build</code>: Build the site without running the server.</li>
+<li><code>nanosite serve</code>: Run the server explicitly.<ul>
+<li>Use <code>--port [XXXX]</code> to set a custom port. Default: port 8000.</li>
+</ul>
+</li>
+<li><code>nanosite publish</code>: Runs <code>meta/publish</code>: see <a href="http://wanganzhou.com/nanosite/doc/site-generation.html#publish">publishing</a>.</li>
+<li><code>nanosite import [package-name]</code>: Import a package: see <a href="http://wanganzhou.com/nanosite/doc/packages.html">packages</a>.<ul>
+<li>Use <code>--force</code> to force import, even if package already installed.</li>
+<li>Use <code>nanosite --set-package-url [URL]</code> to set the URL of the package repository (and save it as default).</li>
+</ul>
+</li>
+<li><code>nanosite clean</code>: Empty the output directory.</li>
+<li><code>nanosite delete</code>: Delete the whole site.</li>
+</ul>
+<p>Optional arguments:</p>
+<ul>
+<li><code>-s [site-directory]</code>: Use this as the directory of the site to build/serve/publish.</li>
+<li><code>-o [output-directory]</code>: Output to this directory when building/serving.</li>
+<li><code>-m [meta-directory]</code>: Use alternate meta directory.</li>
+</ul>
+</article>
+
+    <footer>
+      <div><small>Copyright Andrew Wang. Powered by <a href="http://wanganzhou.com/nanosite/index.html">nanosite</a>.</small></div>
+    </footer>
+  </body>
+  
+</html>
+
+
