@@ -1,16 +1,23 @@
 ## Me
 <img src="{{site.url}}/images/me.jpg" style="width: 40%">
 
-Hello! I'm Andrew Wang. I'm a Dean's Scholar at Cornell majoring in Computer Science, Philosophy and Math. I'm interested in modeling the social network and linguistic underpinnings of social interaction. Working with Professor [Cristian Danescu-Niculescu-Mizil](http://www.cs.cornell.edu/~cristian/).
+Hello! I'm Andrew Wang. I'm a Master's student studying Computer Science at Stanford. I'm interested in natural language processing, particularly neural approaches to modeling compositionality in language. Previously I was a Tanner Dean's Scholar at Cornell majoring in Computer Science, Philosophy and Math, advised by Professor [Cristian Danescu-Niculescu-Mizil](http://www.cs.cornell.edu/~cristian/).
 
 Summer 2017: I studied social networks at the [EPFL Data Science Lab](https://dlab.epfl.ch) with Professor [Robert West](https://dlab.epfl.ch/people/west/).
-
-- Final presentation slides: [Inferring a Status Network of Wikipedia Editors]({{site.url}}/downloads/epfl-2017su.pdf)
 
 Find me on:
 
 * [GitHub](https://github.com/qema) (qema)
 * [YouTube](https://www.youtube.com/user/losmmorpg) (losmmorpg)
+
+## Publications
+*Confidence Boost in Dyadic Online Teamwork: An Individual-Focused Perspective*.  
+Liye Fu, Andrew Wang and Cristian Danescu-Niculescu-Mizil.  
+Proceedings of ICWSM 2020. *To appear.*
+
+*ConvoKit: The Cornell Conversational Analysis Toolkit*.  
+Jonathan P. Chang, Caleb Chiam, Liye Fu, Andrew Wang, Justine Zhang, Cristian Danescu-Niculescu-Mizil.  
+2019. *Technical report in progress.*
 
 ## Projects
 
@@ -37,7 +44,7 @@ ol li:nth-child(6) a:first-child { color: #b22ab2; }
 ol li:nth-child(6) a:first-child:hover { color: #e639e6; }
 </style>
 
-1. [Cornell Conversational Analysis Toolkit](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain insight into power dynamics between speakers, constructiveness of discussions and more.
+1. [Cornell Conversational Analysis Toolkit (ConvoKit)](https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit). Tools to analyze conversational data in order to gain insight into power dynamics between speakers, constructiveness of discussions and more.
 2. [StreetCrowd](http://streetcrowd.us). Multiplayer world-exploration game developed by Cornell NLP.
 3. [Neon Birds]({{site.url}}/birds). Colorful interactive simulation of swarming behavior in birds.
 4. [Nanosite]({{site.url}}/nanosite). Modern, elegant static-site generator. Let's lead the static site revolution!
