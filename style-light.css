@@ -6,7 +6,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.5em;
     margin-top: 0;
     margin-bottom: 0;
-    color: #f3f4f5;
 }
 
 h1 { font-size: 36px; }
@@ -21,7 +20,7 @@ h6 { font-size: 12px; }
         width: 100%;/*55%;*/ /*6.666%;*/
         margin: 0;
         padding: 0;
-        background: #111;/*#f3f3f3;*/
+        background: #f3f3f3;
     }
     .container {
         margin: auto;
@@ -29,34 +28,32 @@ h6 { font-size: 12px; }
         margin-bottom: 0em;
         width: 55%;
         padding-top: 1em;
-        padding-left: 1in;
-        padding-right: 1in;
-        padding-bottom: 1in;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-bottom: 3em;
     }
 }
 @media only screen and (max-width: 1023px) {
     body {
         padding: 0em 1em;
-        background: #212121;
     }
 }
 
 body {
     font-family: Merriweather, serif;
     font-size: 14.4px;
-    color: #c0c5ce;
 }
 
 .container {
-    background: #212121;
+    background: white;
 }
 
 h1 a, h2 a, h3 a {
     text-decoration: none;
-    color: #f3f4f5;
+    color: black;
 }
 h1 a:hover, h2 a:hover, h3 a:hover {
-    color: #f3f4f5;
+    color: black;
 }
 
 header {
@@ -82,9 +79,9 @@ nav li {
 }
   
 nav li a {
-    /*text-decoration: none;*/
+    text-decoration: none;
     display: inline-block;
-    color: #c0c5ce;
+    color: black;
 }
 
 nav ul li:hover {
@@ -151,11 +148,10 @@ article {
 
 a {
     text-decoration: underline;
-    color: #f3f4f5;
+    color: #000;
 }
 a:hover {
-    /*color: #991200;*/
-    color: #e57373;
+    color: #991200;
     text-decoration: underline;
 }
 
